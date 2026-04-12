@@ -22,7 +22,6 @@
             background-image: url('fondo.jpg');
             background-size: cover;
             background-position: center;
-            /* Eliminamos background-attachment: fixed que rompe en iPhone */
             color: #4a4a4a;
             text-align: center;
             overflow-x: hidden;
@@ -49,7 +48,6 @@
         }
 
         section { 
-            /* Cambiamos px por dvh (altura dinámica de pantalla móvil) */
             height: 100dvh; 
             width: 100%; position: relative;
             display: flex; flex-direction: column; overflow: hidden;
@@ -79,13 +77,13 @@
         /* PORTADA */
         .hero-black-text { color: #000000 !important; font-weight: 100 !important; letter-spacing: 3px; text-transform: uppercase; line-height: 1.0 !important; font-size: 1.5rem; }
 
-        /* CONTADOR */
-        .countdown-container { position: absolute; bottom: 60px; left: 50%; transform: translateX(-50%); width: 100%; z-index: 10; display: flex; flex-direction: column; align-items: center; }
-        .countdown-boxes { display: flex; align-items: center; justify-content: center; gap: 5px; width: 100%; margin-top: 10px; }
+        /* CONTADOR MÁS ESTRECHO */
+        .countdown-container { position: absolute; bottom: 60px; left: 50%; transform: translateX(-50%); width: auto; z-index: 10; display: flex; flex-direction: column; align-items: center; }
+        .countdown-boxes { display: flex; align-items: center; justify-content: center; gap: 2px; margin-top: 8px; }
         .time-unit { text-align: center; display: flex; align-items: baseline; }
-        .time-unit span { display: block; font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--color-oro); font-weight: 400; }
-        .time-label { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1px; color: var(--color-oro); font-weight: 600; margin-left: 4px; }
-        .separator { font-size: 1.2rem; color: var(--color-oro); margin: 0 5px; opacity: 0.7; }
+        .time-unit span { display: block; font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--color-oro); font-weight: 400; }
+        .time-label { font-size: 0.55rem; text-transform: uppercase; letter-spacing: 1px; color: var(--color-oro); font-weight: 600; margin-left: 2px; }
+        .separator { font-size: 1rem; color: var(--color-oro); margin: 0 3px; opacity: 0.6; padding-bottom: 2px; }
 
         /* BOTONES */
         .btn-circle { display: flex; align-items: center; justify-content: center; width: 70px; height: 70px; border-radius: 50%; margin-top: 10px; background-image: url('clic.jpeg'); background-size: 50%; background-position: center; background-repeat: no-repeat; z-index: 30; border: none; background-color: rgba(255,255,255,0.6); backdrop-filter: blur(2px); cursor: pointer; border: 1px solid white; }
@@ -95,7 +93,7 @@
         /* FORMULARIO RSVP */
         .rsvp-form { width: 100%; max-width: 320px; margin-top: 5px; text-align: left; }
         .form-group { display: flex; align-items: center; margin-bottom: 6px; font-size: 0.8rem; color: #4a4a4a; }
-        .form-group input[type="checkbox"] { margin-right: 12px; accent-color: var(--color-oro); width: 16px; height: 16px; }
+        .form-group input[type="checkbox"] { margin-right: 12px; accent-color: var(--color-oro); width: 16px; height: 18px; }
         .total-input-box { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; padding: 3px 0; border-bottom: 1px solid #eee; font-size: 0.85rem; }
         .total-input-box input { width: 45px; padding: 3px; border: 1px solid #ddd; border-radius: 5px; text-align: center; }
         .menu-title { font-weight: 600; color: var(--color-oro); font-size: 0.8rem; margin: 8px 0 4px 0; text-transform: uppercase; letter-spacing: 1px;}
@@ -150,7 +148,7 @@
         <section>
             <div class="img-overlay-container">
                 <div class="countdown-container">
-                    <p style="font-size:0.8rem; color: #4a4a4a; letter-spacing: 3px; text-transform: uppercase; font-weight: 400;">Cada día falta menos...</p>
+                    <p style="font-size:0.75rem; color: #4a4a4a; letter-spacing: 3px; text-transform: uppercase; font-weight: 400;">Cada día falta menos...</p>
                     <div class="countdown-boxes">
                         <div class="time-unit"><span id="days">00</span><div class="time-label">dd</div></div>
                         <div class="separator">:</div>
@@ -285,11 +283,11 @@
             const intolerancia = document.getElementById('input-intolerancia').value || "Ninguna";
 
             if ((cArrilleras + mErluza) !== total) {
-                alert(`Por favor, asigna los ${total} platos correctamente.`);
+                alert(`Por favor, asigna los ${total} platos correctamente antes de confirmar.`);
                 return;
             }
 
-            let msj = `¡Hola Rafa y Ana! Confirmo asistencia a vuestra boda.%0A%0A- Bus: ${bus}%0A- Hotel: ${hotel}%0A- Personas: ${total}%0A- Menú: ${cArrilleras} Carrilleras e ${mErluza} Merluzas%0A- Notas: ${intolerancia}`;
+            let msj = `¡Hola Rafa y Ana! Confirmo asistencia.%0A%0A- Bus: ${bus}%0A- Hotel: ${hotel}%0A- Personas: ${total}%0A- Menú: ${cArrilleras} Carrilleras e ${mErluza} Merluzas%0A- Notas: ${intolerancia}`;
             window.open(`https://wa.me/34600000000?text=${msj}`, '_blank');
         }
 
