@@ -19,9 +19,6 @@
             font-family: 'Montserrat', sans-serif;
             font-weight: 300;
             background-color: #fcfbf9;
-            background-image: url('fondo.jpg');
-            background-size: cover;
-            background-position: center;
             color: #4a4a4a;
             text-align: center;
             overflow-x: hidden;
@@ -35,68 +32,66 @@
             background-size: cover; background-position: center; z-index: 9999;
             display: flex; flex-direction: column; align-items: center; 
             justify-content: center; cursor: pointer; transition: opacity 0.8s ease;
-            box-shadow: 0 0 50px rgba(0,0,0,0.2);
         }
-        .intro-text-block { display: flex; flex-direction: column; align-items: center; padding: 20px; }
-        .announcement { font-weight: 200; font-size: 1.1rem; letter-spacing: 6px; color: #a0a0a0; text-transform: uppercase; text-shadow: 0 1px 4px rgba(0,0,0,0.3); margin-bottom: 20px; }
-        .tap-msg { color: #a0a0a0; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 400; opacity: 0.8; }
+        .announcement { font-weight: 200; font-size: 1.1rem; letter-spacing: 6px; color: #a0a0a0; text-transform: uppercase; margin-bottom: 20px; }
+        .tap-msg { color: #a0a0a0; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; opacity: 0.8; }
 
         /* BLOQUE CENTRAL */
         .main-wrapper {
             max-width: var(--ancho-max); margin: 0 auto;
-            background-color: white; box-shadow: 0 0 40px rgba(0,0,0,0.1); min-height: 100vh;
+            background-color: white; box-shadow: 0 0 40px rgba(0,0,0,0.1);
         }
 
         section { 
-            height: 100dvh; 
-            width: 100%; position: relative;
+            height: 100dvh; width: 100%; position: relative;
             display: flex; flex-direction: column; overflow: hidden;
-            background-size: cover; background-position: center;
         }
 
-        .img-overlay-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-        .main-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .main-img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; z-index: 1; }
+        .content-overlay { position: relative; z-index: 10; width: 100%; height: 100%; display: flex; flex-direction: column; }
 
-        /* TEXTOS */
-        .poem-container { height: 100%; padding: 40px 35px; display: flex; flex-direction: column; justify-content: space-evenly; align-items: center; z-index: 2; }
-        .text-container-center { padding: 0 35px; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 2; }
-        .text-container-bottom { position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px 25px 50px 25px; display: flex; flex-direction: column; align-items: center; z-index: 2; }
-        .text-container-top { position: absolute; top: 0; left: 0; width: 100%; padding: 50px 25px 30px 25px; display: flex; flex-direction: column; align-items: center; z-index: 2; }
+        /* ESTILOS DE TEXTO Y DISTRIBUCIÓN */
+        .poem-container { padding: 40px 35px; justify-content: space-evenly; align-items: center; }
+        .text-center { justify-content: center; align-items: center; padding: 20px 35px; }
+        .text-bottom { justify-content: flex-end; padding-bottom: 60px; }
+        .text-top { justify-content: flex-start; padding-top: 60px; }
 
-        h2 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 2rem; margin-bottom: 10px; color: #90908e; }
-        p { color: #90908e; line-height: 1.5; font-size: 0.95rem; }
-        .gold-label { font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-top: 5px; display: block; color: var(--color-oro); font-size: 1rem; }
+        /* Clase para estirar contenido en secciones 6 y 7 */
+        .full-stretch { justify-content: space-evenly; padding: 50px 30px; }
 
-        .hero-black-text { color: #000000 !important; font-weight: 100 !important; letter-spacing: 3px; text-transform: uppercase; line-height: 1.0 !important; font-size: 1.5rem; }
+        h2 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 2.2rem; color: #90908e; margin-bottom: 10px; }
+        p { color: #90908e; line-height: 1.6; font-size: 0.95rem; }
+        .gold-label { font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--color-oro); font-size: 1.1rem; margin-top: 5px; }
 
-        /* CONTADOR */
-        .countdown-container { position: absolute; bottom: 60px; left: 50%; transform: translateX(-50%); width: auto; z-index: 10; display: flex; flex-direction: column; align-items: center; }
-        .countdown-boxes { display: flex; align-items: center; justify-content: center; gap: 2px; margin-top: 8px; }
-        .time-unit { text-align: center; display: flex; align-items: baseline; }
-        .time-unit span { display: block; font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--color-oro); font-weight: 400; }
-        .time-label { font-size: 0.55rem; text-transform: uppercase; letter-spacing: 1px; color: var(--color-oro); font-weight: 600; margin-left: 2px; }
-        .separator { font-size: 1rem; color: var(--color-oro); margin: 0 3px; opacity: 0.6; padding-bottom: 2px; }
+        /* PORTADA */
+        .hero-black-text { color: #000000 !important; font-weight: 100 !important; letter-spacing: 3px; text-transform: uppercase; line-height: 1.0; font-size: 1.5rem; }
+
+        /* CONTADOR COMPACTO IPHONE */
+        .countdown-container { margin-bottom: 70px; margin-top: auto; }
+        .countdown-boxes { display: flex; align-items: center; justify-content: center; gap: 2px; margin-top: 10px; }
+        .time-unit { display: flex; align-items: baseline; color: var(--color-oro); }
+        .time-unit span { font-family: 'Playfair Display', serif; font-size: 1.8rem; }
+        .time-label { font-size: 0.55rem; text-transform: uppercase; margin-left: 2px; font-weight: 600; }
+        .separator { font-size: 1rem; color: var(--color-oro); margin: 0 3px; opacity: 0.6; }
 
         /* BOTONES */
-        .btn-circle { display: flex; align-items: center; justify-content: center; width: 70px; height: 70px; border-radius: 50%; margin-top: 10px; background-image: url('clic.jpeg'); background-size: 50%; background-position: center; background-repeat: no-repeat; z-index: 30; border: none; background-color: rgba(255,255,255,0.6); backdrop-filter: blur(2px); cursor: pointer; border: 1px solid white; }
-        .btn-cam-rsvp { background-image: url('camrafotofiltro.jpeg') !important; background-size: cover !important; background-position: center !important; width: 85px !important; height: 85px !important; border-radius: 50% !important; border: 1px solid white !important; margin: 10px auto !important; cursor: pointer; }
-        .btn-hotel-rsvp { width: 85px !important; height: 85px !important; background-size: 45% !important; margin: 10px auto !important; }
+        .btn-circle { width: 75px; height: 75px; border-radius: 50%; background: rgba(255,255,255,0.6) url('clic.jpeg') no-repeat center/50%; border: 1px solid white; cursor: pointer; }
+        .btn-cam-rsvp { width: 85px; height: 85px; border-radius: 50%; background: url('camrafotofiltro.jpeg') center/cover; border: 1px solid white; cursor: pointer; margin: 10px auto; }
+        .btn-hotel-rsvp { width: 85px; height: 85px; border-radius: 50%; background: rgba(255,255,255,0.6) url('clic.jpeg') no-repeat center/50%; border: 1px solid white; margin: 10px auto; }
 
-        /* RSVP */
-        .rsvp-form { width: 100%; max-width: 320px; margin-top: 5px; text-align: left; }
-        .form-group { display: flex; align-items: center; margin-bottom: 6px; font-size: 0.8rem; color: #4a4a4a; }
-        .form-group input[type="checkbox"] { margin-right: 12px; accent-color: var(--color-oro); width: 18px; height: 18px; }
-        .total-input-box { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; padding: 3px 0; border-bottom: 1px solid #eee; font-size: 0.85rem; }
-        .total-input-box input { width: 45px; padding: 3px; border: 1px solid #ddd; border-radius: 5px; text-align: center; }
-        .menu-title { font-weight: 600; color: var(--color-oro); font-size: 0.8rem; margin: 8px 0 4px 0; text-transform: uppercase; letter-spacing: 1px;}
-        .intolerancia-input { width: 100%; padding: 8px; border: 1px solid #eee; border-radius: 8px; font-size: 0.8rem; margin-top: 5px; background: #fff; }
-        .plate-selector { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; font-size: 0.8rem; background: rgba(255,255,255,0.7); padding: 4px 10px; border-radius: 8px; }
-        .plate-selector input { width: 45px; padding: 2px; border: 1px solid #ddd; border-radius: 5px; text-align: center; font-weight: 600; color: var(--color-oro); }
-        .btn-label { display: block; font-size: 0.75rem; margin-top: 5px; color: #90908e; }
+        /* RSVP FORM */
+        .rsvp-form { width: 100%; max-width: 340px; text-align: left; margin: 0 auto; }
+        .form-group { display: flex; align-items: center; margin-bottom: 8px; font-size: 0.85rem; }
+        .form-group input { margin-right: 12px; accent-color: var(--color-oro); width: 18px; height: 18px; }
+        .total-input-box { display: flex; justify-content: space-between; align-items: center; margin: 10px 0; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        .plate-selector { display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.7); padding: 5px 10px; border-radius: 8px; margin-bottom: 8px; font-size: 0.85rem; }
+        .plate-selector input, .total-input-box input { width: 55px; text-align: center; border: 1px solid #ddd; border-radius: 5px; padding: 4px; }
+        .menu-title { font-weight: 600; color: var(--color-oro); font-size: 0.85rem; margin-top: 10px; text-transform: uppercase; }
+        .intolerancia-input { width: 100%; padding: 8px; border: 1px solid #eee; border-radius: 8px; margin-top: 5px; font-family: 'Montserrat'; font-size: 0.85rem; }
 
         /* MÚSICA */
-        #music-control { position: fixed; bottom: 25px; right: 25px; z-index: 1000; background: transparent; width: 50px; height: 50px; display: none; align-items: center; justify-content: center; border: none; cursor: pointer; }
-        #music-status { color: white; font-size: 2.2rem; text-shadow: 0 2px 10px rgba(0,0,0,0.5); opacity: 0.9; }
+        #music-control { position: fixed; bottom: 25px; right: 25px; z-index: 1000; cursor: pointer; display: none; background: transparent; border: none; }
+        #music-status { color: white; font-size: 2.2rem; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
     </style>
 </head>
 <body>
@@ -110,39 +105,41 @@
         </div>
     </div>
 
-    <div id="music-control" onclick="toggleMusic()"> <span id="music-status">⏸</span> </div>
+    <div id="music-control" onclick="toggleMusic()"><span id="music-status">⏸</span></div>
 
     <div class="main-wrapper">
+        
         <section>
-            <div class="img-overlay-container">
-                <div style="position: absolute; top: 40px; left: 30px; z-index: 10; text-align: left; color: white;">
-                    <span style="font-family:'Montserrat'; font-size:2.5rem; font-weight:200; text-transform:uppercase;">ANA</span><br>
-                    <span style="font-family:'Montserrat'; font-size:2.5rem; font-weight:200; text-transform:uppercase;">& RAFAEL</span>
+            <div class="content-overlay">
+                <div style="position: absolute; top: 40px; left: 30px; text-align: left; color: white;">
+                    <span style="font-size:2.5rem; font-weight:200; text-transform:uppercase; display:block;">ANA</span>
+                    <span style="font-size:2.5rem; font-weight:200; text-transform:uppercase; display:block;">& RAFAEL</span>
                 </div>
-                <div style="position: absolute; bottom: 20px; right: 35px; z-index: 10; text-align: right;">
+                <div style="position: absolute; bottom: 20px; right: 35px; text-align: right;">
                     <p class="hero-black-text">15.08.2026</p>
                     <p class="hero-black-text">NOS CASAMOS</p>
                 </div>
-                <img src="primerafoto.jpeg" class="main-img">
             </div>
-        </section>
-
-        <section class="section-poem">
-            <div class="poem-container">
-                <p style="font-family:'Playfair Display', serif; font-size:1.2rem; line-height: 1.5;">Entre leyes, cafés y alguna que otra salida…. nos conocimos.</p>
-                <p style="font-family:'Playfair Display', serif; font-size:1.2rem; line-height: 1.5;">Desde entonces aprendimos que el amor, como la vida, va de acompañarse.</p>
-                <p style="font-family:'Playfair Display', serif; font-size:1.2rem; line-height: 1.5;">Nos hace muchísima ilusión compartir este día con vosotros, porque no es solo una boda, es una celebración íntima con las personas verdaderamente indispensables.</p>
-                <div>
-                    <p style="font-family:'Playfair Display', serif; font-size:1.2rem; color: var(--color-oro); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px;">Nuestra única petición:</p>
-                    <p style="font-family:'Playfair Display', serif; font-size:1.2rem; line-height: 1.6;">olvidaros del reloj, bailad, comed, reíd y defended el derecho a disfrutar sin límites.</p>
-                </div>
-            </div>
+            <img src="primerafoto.jpeg" class="main-img">
         </section>
 
         <section>
-            <div class="img-overlay-container">
+            <div class="content-overlay poem-container">
+                <p style="font-family:'Playfair Display'; font-size:1.3rem;">Entre leyes, cafés y alguna que otra salida…. nos conocimos.</p>
+                <p style="font-family:'Playfair Display'; font-size:1.3rem;">Desde entonces aprendimos que el amor, como la vida, va de acompañarse.</p>
+                <p style="font-family:'Playfair Display'; font-size:1.3rem;">Nos hace muchísima ilusión compartir este día con vosotros, porque no es solo una boda, es una celebración íntima con las personas verdaderamente indispensables.</p>
+                <div>
+                    <p style="color: var(--color-oro); text-transform: uppercase; font-size:1.3rem; margin-bottom: 10px;">Nuestra única petición:</p>
+                    <p style="font-family:'Playfair Display'; font-size:1.3rem;">olvidaros del reloj, bailad, comed, reíd y defended el derecho a disfrutar sin límites.</p>
+                </div>
+            </div>
+            <img src="fondo_texto.jpeg" class="main-img">
+        </section>
+
+        <section>
+            <div class="content-overlay">
                 <div class="countdown-container">
-                    <p style="font-size:0.75rem; color: #4a4a4a; letter-spacing: 3px; text-transform: uppercase; font-weight: 400;">Cada día falta menos...</p>
+                    <p style="font-size:0.8rem; letter-spacing: 3px; text-transform: uppercase;">Cada día falta menos...</p>
                     <div class="countdown-boxes">
                         <div class="time-unit"><span id="days">00</span><div class="time-label">dd</div></div>
                         <div class="separator">:</div>
@@ -153,82 +150,90 @@
                         <div class="time-unit"><span id="seconds">00</span><div class="time-label">ss</div></div>
                     </div>
                 </div>
-                <img src="segundafoto.jpeg" class="main-img">
             </div>
-        </section>
-
-        <section class="section-ceremony">
-            <div class="text-container-bottom">
-                <h2>Ceremonia</h2>
-                <p style="font-weight:500;">Santuario de la Inmaculada Concepción</p>
-                <p style="font-size:0.8rem;">C. del Sol, 39, 11300 La Línea, Cádiz</p>
-                <a href="https://maps.app.goo.gl/..." target="_blank" class="btn-circle"></a>
-                <span class="btn-label">(Cómo llegar)</span>
-            </div>
-        </section>
-
-        <section class="section-banquet">
-            <div class="text-container-top">
-                <h2>Banquete</h2>
-                <p style="font-weight:500;">Cortijo de Soto de Roma</p>
-                <p style="font-size:0.8rem;">Diseminado Poligono 23, 8, 11370 Los Barrios, Cádiz</p>
-                <a href="https://maps.app.goo.gl/..." target="_blank" class="btn-circle"></a>
-                <span class="btn-label">(Cómo llegar)</span>
-            </div>
-        </section>
-
-        <section class="section-itinerary">
-            <div class="text-container-center">
-                <h2 style="margin-bottom: 20px;">Horarios</h2>
-                <div style="margin-bottom:15px;"><span class="gold-label">Ceremonia</span><p>18:15 h (Puntualidad 💛)</p></div>
-                <div style="margin-bottom:20px;"><span class="gold-label">Traslado a la finca</span><p>20:30 – 21:00 h</p></div>
-                <div style="margin-bottom:20px;"><span class="gold-label">🥂 Cóctel</span><p>21:00 h</p></div>
-                <div style="margin-bottom:20px;"><span class="gold-label">🍽️ Cena</span><p>22:00 h</p></div>
-                <div style="margin-bottom:20px;"><span class="gold-label">Fiesta</span><p>01:00 – 05:00 h (💃🕺)</p></div>
-                <p style="margin-top:10px; font-size:0.75rem; border-top:1px solid var(--color-oro); padding-top:10px;">Posdata; recomendamos llevar calzado cómodo (o un segundo par).</p>
-            </div>
-        </section>
-
-        <section class="section-dresscode">
-            <div class="text-container-center">
-                <h2 style="font-size:2.2rem; margin-bottom: 20px;">Código de Vestimenta</h2>
-                <p style="font-style:italic; margin-bottom: 20px; font-size:1rem;">Para acompañarnos en este día tan especial, os proponemos un estilo formal y elegante:</p>
-                <div style="margin-bottom: 20px;"><span class="gold-label">Hombres</span><p>Traje chaqueta y corbata.</p></div>
-                <div><span class="gold-label">Mujeres</span><p style="max-width:90%; margin: 0 auto;">Evitad colores claros (blanco, beige, nude...) para reservarlos para la novia.</p></div>
-            </div>
-        </section>
-
-        <section class="section-rsvp">
-            <div class="text-container-center">
-                <h2 style="margin-bottom: 5px;">Asistencia</h2>
-                <div class="rsvp-form">
-                    <label class="form-group"><input type="checkbox" id="check-bus"> Necesidad de bus</label>
-                    <label class="form-group"><input type="checkbox" id="check-hotel"> Necesidad de hotel</label>
-                    <div class="total-input-box">
-                        <span>¿Cuántos sois en total?</span>
-                        <input type="number" id="num-total" value="1" min="1" oninput="controlarPlatos()">
-                    </div>
-                    <p class="menu-title">Selección de Menú</p>
-                    <div class="plate-selector"><span>Carrilleras ibéricas</span><input type="number" id="count-carrilleras" value="0" min="0" oninput="controlarPlatos()"></div>
-                    <div class="plate-selector"><span>Lomo de merluza</span><input type="number" id="count-merluza" value="0" min="0" oninput="controlarPlatos()"></div>
-                    <p id="aviso-platos" style="font-size: 0.65rem; color: var(--color-oro); text-align: center;">Platos por asignar: <span id="platos-libres">1</span></p>
-                    <p class="menu-title">Intolerancias / Alergias</p>
-                    <input type="text" id="input-intolerancia" class="intolerancia-input" placeholder="Ej: Celíaco...">
-                </div>
-                <div class="btn-cam-rsvp" onclick="enviarWhatsApp()"></div>
-                <span class="btn-label">(Toca para confirmar)</span>
-                <span class="gold-label" style="margin-top:10px; font-size: 1rem;">Hotel Montera Plaza</span>
-                <a href="https://maps.app.goo.gl/..." target="_blank" class="btn-circle btn-hotel-rsvp"></a>
-                <span class="btn-label">(Cómo llegar)</span>
-            </div>
+            <img src="segundafoto.jpeg" class="main-img">
         </section>
 
         <section>
-            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 42%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; z-index: 10; padding-bottom: 10px;">
-                <p style="font-family:'Playfair Display', serif; font-size:1.3rem; color: #4a4a4a; text-shadow: 0 0 10px white; margin-bottom: 10px;">¡Ayúdanos a crear el álbum perfecto!</p>
-                <p style="font-family:'Playfair Display', serif; font-size:1rem; color: #4a4a4a; text-shadow: 0 0 10px white; padding: 0 40px; line-height: 1.4;">Comparte con nosotros las fotos que realices en nuestro Gran Día.</p>
-                <a href="https://photos.app.goo.gl/..." target="_blank" style="width: 80px; height: 80px; border-radius: 50%; background-image: url('iconoimagenes.jpeg'); background-size: cover; background-position: center; border: 2px solid white; box-shadow: 0 4px 15px rgba(0,0,0,0.15); margin-top: 15px; display: block;"></a>
-                <span style="font-size: 0.7rem; color: var(--color-oro); font-weight: 600; margin-top: 5px; text-transform: uppercase; letter-spacing: 1px; text-shadow: 0 0 5px white;">(Subir fotos)</span>
+            <div class="content-overlay text-bottom">
+                <h2>Ceremonia</h2>
+                <p style="font-weight:500;">Santuario de la Inmaculada Concepción</p>
+                <p style="font-size:0.85rem;">C. del Sol, 39, 11300 La Línea, Cádiz</p>
+                <a href="https://maps.app.goo.gl/..." target="_blank" class="btn-circle" style="margin: 15px auto;"></a>
+                <p style="font-size:0.75rem; margin-top:5px;">(Cómo llegar)</p>
+            </div>
+            <img src="ceremonia.jpeg" class="main-img">
+        </section>
+
+        <section>
+            <div class="content-overlay text-top">
+                <h2>Banquete</h2>
+                <p style="font-weight:500;">Cortijo de Soto de Roma</p>
+                <p style="font-size:0.85rem;">Diseminado Poligono 23, 8, 11370 Los Barrios, Cádiz</p>
+                <a href="https://maps.app.goo.gl/..." target="_blank" class="btn-circle" style="margin: 15px auto;"></a>
+                <p style="font-size:0.75rem; margin-top:5px;">(Cómo llegar)</p>
+            </div>
+            <img src="banquete.jpeg" class="main-img">
+        </section>
+
+        <section>
+            <div class="content-overlay full-stretch">
+                <h2>Horarios</h2>
+                <div><span class="gold-label">Ceremonia</span><p>18:15 h (Puntualidad 💛)</p></div>
+                <div><span class="gold-label">Traslado a la finca</span><p>20:30 – 21:00 h</p></div>
+                <div><span class="gold-label">🥂 Cóctel</span><p>21:00 h</p></div>
+                <div><span class="gold-label">🍽️ Cena</span><p>22:00 h</p></div>
+                <div><span class="gold-label">Fiesta</span><p>01:00 – 05:00 h (💃🕺)</p></div>
+                <p style="font-size:0.85rem; border-top:1px solid var(--color-oro); padding-top:15px; margin-top:10px;">Posdata: recomendamos llevar calzado cómodo (o un segundo par).</p>
+            </div>
+            <img src="fondo_itinerario.jpeg" class="main-img">
+        </section>
+
+        <section>
+            <div class="content-overlay full-stretch">
+                <h2>Código de Vestimenta</h2>
+                <p style="font-style:italic; padding: 0 10px;">Para acompañarnos en este día tan especial, os proponemos un estilo formal y elegante:</p>
+                <div>
+                    <span class="gold-label">Hombres</span>
+                    <p>Traje chaqueta y corbata.</p>
+                </div>
+                <div>
+                    <span class="gold-label">Mujeres</span>
+                    <p style="max-width:280px; margin: 0 auto;">Evitad colores claros (blanco, beige, nude...) para reservarlos para la novia.</p>
+                </div>
+            </div>
+            <img src="fondo_codigovestimenta.jpeg" class="main-img">
+        </section>
+
+        <section>
+            <div class="content-overlay text-center">
+                <h2 style="margin-bottom: 10px;">Asistencia</h2>
+                <div class="rsvp-form">
+                    <label class="form-group"><input type="checkbox" id="check-bus"> Necesidad de bus</label>
+                    <label class="form-group"><input type="checkbox" id="check-hotel"> Necesidad de hotel</label>
+                    <div class="total-input-box"><span>¿Cuántos sois en total?</span><input type="number" id="num-total" value="1" min="1" oninput="controlarPlatos()"></div>
+                    <p class="menu-title">Selección de Menú</p>
+                    <div class="plate-selector"><span>Carrilleras ibéricas</span><input type="number" id="count-carrilleras" value="0" min="0" oninput="controlarPlatos()"></div>
+                    <div class="plate-selector"><span>Lomo de merluza</span><input type="number" id="count-merluza" value="0" min="0" oninput="controlarPlatos()"></div>
+                    <p id="aviso-platos" style="font-size: 0.7rem; color: var(--color-oro); text-align: center;">Platos por asignar: <span id="platos-libres">1</span></p>
+                    <input type="text" id="input-intolerancia" class="intolerancia-input" placeholder="Ej: Celíaco, sin lactosa...">
+                </div>
+                <div class="btn-cam-rsvp" onclick="enviarWhatsApp()"></div>
+                <span style="font-size:0.75rem; color:#90908e;">(Toca la cámara para confirmar)</span>
+                
+                <span class="gold-label" style="margin-top:15px; font-size: 1.1rem;">Hotel Montera Plaza</span>
+                <a href="https://maps.app.goo.gl/..." target="_blank" class="btn-circle btn-hotel-rsvp"></a>
+                <span style="font-size:0.75rem; color:#90908e;">(Cómo llegar)</span>
+            </div>
+            <img src="fondo_asistencia.jpeg" class="main-img">
+        </section>
+
+        <section>
+            <div class="content-overlay" style="justify-content: flex-end; height: 42%; padding-bottom:15px; align-items: center;">
+                <p style="font-family:'Playfair Display'; font-size:1.4rem; text-shadow: 0 0 10px white; color:#4a4a4a;">¡Ayúdanos a crear el álbum perfecto!</p>
+                <p style="font-family:'Playfair Display'; font-size:1.1rem; padding: 0 40px; text-shadow: 0 0 10px white; color:#4a4a4a; line-height:1.4;">Comparte con nosotros las fotos que realices en nuestro Gran Día.</p>
+                <a href="https://photos.app.goo.gl" target="_blank" style="width: 85px; height: 85px; border-radius: 50%; background: url('iconoimagenes.jpeg') center/cover; border: 2px solid white; margin-top:15px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);"></a>
+                <span style="font-size: 0.7rem; color: var(--color-oro); font-weight: 600; margin-top: 5px; text-transform: uppercase;">(Subir fotos)</span>
             </div>
             <img src="quintafoto.jpeg" class="main-img">
         </section>
@@ -248,54 +253,46 @@
             document.getElementById("intro-overlay").style.opacity = "0";
             setTimeout(() => { 
                 document.getElementById("intro-overlay").style.display = "none"; 
-                document.getElementById("music-control").style.display = "flex"; 
+                document.getElementById("music-control").style.display = "block"; 
                 var playPromise = audio.play();
                 if (playPromise !== undefined) {
-                    playPromise.then(_ => {
-                        document.getElementById("music-status").innerText = "⏸";
-                    }).catch(e => console.log("Audio block: ", e));
+                    playPromise.then(_ => { document.getElementById("music-status").innerText = "⏸"; })
+                    .catch(e => console.log("Audio block", e));
                 }
             }, 800);
         }
-
         function toggleMusic() {
             if (audio.paused) { audio.play(); document.getElementById("music-status").innerText = "⏸"; } 
             else { audio.pause(); document.getElementById("music-status").innerText = "▶"; }
         }
-
         function controlarPlatos() {
             const total = parseInt(document.getElementById('num-total').value) || 0;
-            const inCarri = document.getElementById('count-carrilleras');
-            const inMerlu = document.getElementById('count-merluza');
-            const displayLibres = document.getElementById('platos-libres');
-            let valCarri = parseInt(inCarri.value) || 0;
-            let valMerlu = parseInt(inMerlu.value) || 0;
-            if (valCarri + valMerlu > total) {
-                const diff = (valCarri + valMerlu) - total;
-                if (window.event && window.event.target.id === 'count-carrilleras') inCarri.value = Math.max(0, valCarri - diff);
-                else inMerlu.value = Math.max(0, valMerlu - diff);
+            const c = document.getElementById('count-carrilleras');
+            const m = document.getElementById('count-merluza');
+            const libres = document.getElementById('platos-libres');
+            let vc = parseInt(c.value) || 0;
+            let vm = parseInt(m.value) || 0;
+            if (vc + vm > total) {
+                if (window.event && window.event.target.id === 'count-carrilleras') c.value = total - vm;
+                else m.value = total - vc;
             }
-            displayLibres.innerText = Math.max(0, total - (parseInt(inCarri.value) + parseInt(inMerlu.value)));
+            vc = parseInt(c.value) || 0;
+            vm = parseInt(m.value) || 0;
+            libres.innerText = Math.max(0, total - (vc + vm));
         }
-
         function enviarWhatsApp() {
-            const total = parseInt(document.getElementById('num-total').value);
+            const total = document.getElementById('num-total').value;
             const bus = document.getElementById('check-bus').checked ? "SÍ" : "NO";
             const hotel = document.getElementById('check-hotel').checked ? "SÍ" : "NO";
-            const cArrilleras = parseInt(document.getElementById('count-carrilleras').value) || 0;
-            const mErluza = parseInt(document.getElementById('count-merluza').value) || 0;
-            const intolerancia = document.getElementById('input-intolerancia').value || "Ninguna";
-            if ((cArrilleras + mErluza) !== total) {
-                alert(`Asigna los ${total} platos correctamente.`);
-                return;
-            }
-            let msj = `¡Hola Rafa y Ana! Confirmo asistencia.%0A%0A- Bus: ${bus}%0A- Hotel: ${hotel}%0A- Personas: ${total}%0A- Menú: ${cArrilleras} Carrilleras / ${mErluza} Merluzas%0A- Notas: ${intolerancia}`;
+            const c = document.getElementById('count-carrilleras').value || 0;
+            const m = document.getElementById('count-merluza').value || 0;
+            const notas = document.getElementById('input-intolerancia').value || "Ninguna";
+            let msj = `¡Hola Rafa y Ana! Confirmo asistencia.%0A%0A- Personas: ${total}%0A- Bus: ${bus}%0A- Hotel: ${hotel}%0A- Menú: ${c} Carrilleras / ${m} Merluzas%0A- Notas: ${notas}`;
             window.open(`https://wa.me/34600000000?text=${msj}`, '_blank');
         }
-
-        const targetDate = new Date("Aug 15, 2026 18:00:00").getTime();
+        const target = new Date("Aug 15, 2026 18:00:00").getTime();
         setInterval(() => {
-            const diff = targetDate - new Date().getTime();
+            const diff = target - new Date().getTime();
             if (diff > 0) {
                 daysEl.innerText = String(Math.floor(diff / 86400000)).padStart(2, '0');
                 hoursEl.innerText = String(Math.floor((diff % 86400000) / 3600000)).padStart(2, '0');
