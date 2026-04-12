@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Boda Rafa & Ana - 15.08.2026</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@100;200;300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,300;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
             --color-oro: #c5a059;
+            --color-oro-claro: #e6c27a;
             --texto-secciones: #90908e;
             --ancho-max: 520px;
         }
@@ -50,44 +51,59 @@
         .main-img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; z-index: 1; }
         .content-overlay { position: relative; z-index: 10; width: 100%; height: 100%; display: flex; flex-direction: column; }
 
-        /* ESTILOS DE TEXTO Y DISTRIBUCIÓN */
-        .poem-container { padding: 40px 35px; justify-content: space-evenly; align-items: center; }
-        .text-center { justify-content: center; align-items: center; padding: 20px 35px; }
-        .text-bottom { justify-content: flex-end; padding-bottom: 60px; }
-        .text-top { justify-content: flex-start; padding-top: 60px; }
-
-        /* Clase para estirar contenido en secciones 6 y 7 */
-        .full-stretch { justify-content: space-evenly; padding: 50px 30px; }
-
+        /* ESTILOS DE TEXTO */
         h2 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 2.2rem; color: #90908e; margin-bottom: 10px; }
         p { color: #90908e; line-height: 1.6; font-size: 0.95rem; }
         .gold-label { font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--color-oro); font-size: 1.1rem; margin-top: 5px; }
 
-        /* PORTADA */
-        .hero-black-text { color: #000000 !important; font-weight: 100 !important; letter-spacing: 3px; text-transform: uppercase; line-height: 1.0; font-size: 1.5rem; }
+        .poem-container { padding: 40px 35px; justify-content: space-evenly; align-items: center; }
+        .text-center { justify-content: center; align-items: center; padding: 20px 35px; }
+        .text-bottom { justify-content: flex-end; padding-bottom: 30px; }
+        .text-top { justify-content: flex-start; padding-top: 60px; }
+        .full-stretch { justify-content: space-evenly; padding: 50px 30px; }
 
-        /* CONTADOR COMPACTO IPHONE */
-        .countdown-container { margin-bottom: 70px; margin-top: auto; }
-        .countdown-boxes { display: flex; align-items: center; justify-content: center; gap: 2px; margin-top: 10px; }
-        .time-unit { display: flex; align-items: baseline; color: var(--color-oro); }
-        .time-unit span { font-family: 'Playfair Display', serif; font-size: 1.8rem; }
+        /* PORTADA */
+        .hero-black-text { 
+            color: #000000 !important; 
+            font-weight: 500 !important; 
+            font-style: italic; 
+            letter-spacing: 2px; 
+            text-transform: uppercase; 
+            line-height: 1.1; 
+            font-size: 1.5rem; 
+        }
+
+        /* CONTADOR */
+        .countdown-container { 
+            margin-bottom: 80px; 
+            margin-top: auto; 
+            align-self: center;
+            background: rgba(255, 255, 255, 0.7); 
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 20px 20px;
+            border-radius: 15px;
+            width: 80%;
+        }
+        .countdown-msg {
+            font-size: 0.85rem; 
+            letter-spacing: 2px; 
+            text-transform: uppercase; 
+            color: #222 !important; 
+            font-weight: 500 !important; 
+            font-style: italic; 
+            margin-bottom: 8px;
+        }
+        .countdown-boxes { display: flex; align-items: center; justify-content: center; gap: 2px; }
+        .time-unit { display: flex; align-items: baseline; color: var(--color-oro-claro); }
+        .time-unit span { font-family: 'Playfair Display', serif; font-size: 1.9rem; font-weight: 600; }
         .time-label { font-size: 0.55rem; text-transform: uppercase; margin-left: 2px; font-weight: 600; }
-        .separator { font-size: 1rem; color: var(--color-oro); margin: 0 3px; opacity: 0.6; }
+        .separator { font-size: 1rem; color: var(--color-oro-claro); margin: 0 4px; opacity: 0.8; }
 
         /* BOTONES */
         .btn-circle { width: 75px; height: 75px; border-radius: 50%; background: rgba(255,255,255,0.6) url('clic.jpeg') no-repeat center/50%; border: 1px solid white; cursor: pointer; }
-        .btn-cam-rsvp { width: 85px; height: 85px; border-radius: 50%; background: url('camrafotofiltro.jpeg') center/cover; border: 1px solid white; cursor: pointer; margin: 10px auto; }
-        .btn-hotel-rsvp { width: 85px; height: 85px; border-radius: 50%; background: rgba(255,255,255,0.6) url('clic.jpeg') no-repeat center/50%; border: 1px solid white; margin: 10px auto; }
-
-        /* RSVP FORM */
-        .rsvp-form { width: 100%; max-width: 340px; text-align: left; margin: 0 auto; }
-        .form-group { display: flex; align-items: center; margin-bottom: 8px; font-size: 0.85rem; }
-        .form-group input { margin-right: 12px; accent-color: var(--color-oro); width: 18px; height: 18px; }
-        .total-input-box { display: flex; justify-content: space-between; align-items: center; margin: 10px 0; border-bottom: 1px solid #eee; padding-bottom: 5px; }
-        .plate-selector { display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.7); padding: 5px 10px; border-radius: 8px; margin-bottom: 8px; font-size: 0.85rem; }
-        .plate-selector input, .total-input-box input { width: 55px; text-align: center; border: 1px solid #ddd; border-radius: 5px; padding: 4px; }
-        .menu-title { font-weight: 600; color: var(--color-oro); font-size: 0.85rem; margin-top: 10px; text-transform: uppercase; }
-        .intolerancia-input { width: 100%; padding: 8px; border: 1px solid #eee; border-radius: 8px; margin-top: 5px; font-family: 'Montserrat'; font-size: 0.85rem; }
+        .btn-cam-rsvp { width: 85px; height: 85px; border-radius: 50% !important; background: url('camrafotofiltro.jpeg') center/cover; border: 1px solid white; cursor: pointer; margin: 10px auto; }
+        .btn-hotel-rsvp { width: 85px; height: 85px; border-radius: 50% !important; background: rgba(255,255,255,0.6) url('clic.jpeg') no-repeat center/50%; border: 1px solid white; margin: 10px auto; }
 
         /* MÚSICA */
         #music-control { position: fixed; bottom: 25px; right: 25px; z-index: 1000; cursor: pointer; display: none; background: transparent; border: none; }
@@ -137,9 +153,9 @@
         </section>
 
         <section>
-            <div class="content-overlay">
+            <div class="content-overlay" style="justify-content: center;">
                 <div class="countdown-container">
-                    <p style="font-size:0.8rem; letter-spacing: 3px; text-transform: uppercase;">Cada día falta menos...</p>
+                    <p class="countdown-msg">Cada día falta menos...</p>
                     <div class="countdown-boxes">
                         <div class="time-unit"><span id="days">00</span><div class="time-label">dd</div></div>
                         <div class="separator">:</div>
@@ -159,7 +175,7 @@
                 <h2>Ceremonia</h2>
                 <p style="font-weight:500;">Santuario de la Inmaculada Concepción</p>
                 <p style="font-size:0.85rem;">C. del Sol, 39, 11300 La Línea, Cádiz</p>
-                <a href="https://maps.app.goo.gl/..." target="_blank" class="btn-circle" style="margin: 15px auto;"></a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Santuario+de+la+Inmaculada+Concepción+La+Línea" target="_blank" class="btn-circle" style="margin: 15px auto;"></a>
                 <p style="font-size:0.75rem; margin-top:5px;">(Cómo llegar)</p>
             </div>
             <img src="ceremonia.jpeg" class="main-img">
@@ -170,7 +186,7 @@
                 <h2>Banquete</h2>
                 <p style="font-weight:500;">Cortijo de Soto de Roma</p>
                 <p style="font-size:0.85rem;">Diseminado Poligono 23, 8, 11370 Los Barrios, Cádiz</p>
-                <a href="https://maps.app.goo.gl/..." target="_blank" class="btn-circle" style="margin: 15px auto;"></a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Cortijo+de+Soto+de+Roma" target="_blank" class="btn-circle" style="margin: 15px auto;"></a>
                 <p style="font-size:0.75rem; margin-top:5px;">(Cómo llegar)</p>
             </div>
             <img src="banquete.jpeg" class="main-img">
@@ -208,21 +224,20 @@
         <section>
             <div class="content-overlay text-center">
                 <h2 style="margin-bottom: 10px;">Asistencia</h2>
-                <div class="rsvp-form">
-                    <label class="form-group"><input type="checkbox" id="check-bus"> Necesidad de bus</label>
-                    <label class="form-group"><input type="checkbox" id="check-hotel"> Necesidad de hotel</label>
-                    <div class="total-input-box"><span>¿Cuántos sois en total?</span><input type="number" id="num-total" value="1" min="1" oninput="controlarPlatos()"></div>
-                    <p class="menu-title">Selección de Menú</p>
-                    <div class="plate-selector"><span>Carrilleras ibéricas</span><input type="number" id="count-carrilleras" value="0" min="0" oninput="controlarPlatos()"></div>
-                    <div class="plate-selector"><span>Lomo de merluza</span><input type="number" id="count-merluza" value="0" min="0" oninput="controlarPlatos()"></div>
+                <div style="width:100%; max-width:340px; margin:0 auto; text-align:left;">
+                    <label style="display:flex; align-items:center; margin-bottom:8px; font-size:0.85rem;"><input type="checkbox" id="check-bus" style="margin-right:12px; width:18px; height:18px; accent-color:var(--color-oro);"> Necesidad de bus</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px; font-size:0.85rem;"><input type="checkbox" id="check-hotel" style="margin-right:12px; width:18px; height:18px; accent-color:var(--color-oro);"> Necesidad de hotel</label>
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin:10px 0; border-bottom:1px solid #eee; padding-bottom:5px;"><span>¿Cuántos sois?</span><input type="number" id="num-total" value="1" min="1" oninput="controlarPlatos()" style="width:50px; text-align:center;"></div>
+                    <p style="font-weight:600; color:var(--color-oro); font-size:0.85rem; margin-top:10px; text-transform:uppercase;">Selección de Menú</p>
+                    <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.7); padding:5px 10px; border-radius:8px; margin-bottom:5px; font-size:0.85rem;"><span>Carrilleras ibéricas</span><input type="number" id="count-carrilleras" value="0" oninput="controlarPlatos()" style="width:40px; text-align:center;"></div>
+                    <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.7); padding:5px 10px; border-radius:8px; margin-bottom:5px; font-size:0.85rem;"><span>Lomo de merluza</span><input type="number" id="count-merluza" value="0" oninput="controlarPlatos()" style="width:40px; text-align:center;"></div>
                     <p id="aviso-platos" style="font-size: 0.7rem; color: var(--color-oro); text-align: center;">Platos por asignar: <span id="platos-libres">1</span></p>
-                    <input type="text" id="input-intolerancia" class="intolerancia-input" placeholder="Ej: Celíaco, sin lactosa...">
+                    <input type="text" id="input-intolerancia" placeholder="Ej: Celíaco..." style="width:100%; padding:8px; border:1px solid #eee; border-radius:8px; margin-top:5px; font-family:'Montserrat'; font-size:0.85rem;">
                 </div>
                 <div class="btn-cam-rsvp" onclick="enviarWhatsApp()"></div>
                 <span style="font-size:0.75rem; color:#90908e;">(Toca la cámara para confirmar)</span>
-                
-                <span class="gold-label" style="margin-top:15px; font-size: 1.1rem;">Hotel Montera Plaza</span>
-                <a href="https://maps.app.goo.gl/..." target="_blank" class="btn-circle btn-hotel-rsvp"></a>
+                <span class="gold-label" style="margin-top:10px;">Hotel Montera Plaza</span>
+                <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Montera+Plaza+Los+Barrios" target="_blank" class="btn-circle btn-hotel-rsvp"></a>
                 <span style="font-size:0.75rem; color:#90908e;">(Cómo llegar)</span>
             </div>
             <img src="fondo_asistencia.jpeg" class="main-img">
@@ -238,7 +253,15 @@
             <img src="quintafoto.jpeg" class="main-img">
         </section>
 
-        <section><img src="fotofinal.jpeg" class="main-img"></section>
+        <section>
+            <div class="content-overlay text-bottom">
+                 <p style="font-family:'Playfair Display', serif; font-size:2.2rem; font-style: italic; color: #FFFFFF; text-shadow: 2px 2px 4px rgba(68,68,68,0.8); padding: 0 20px; line-height: 1.1;">
+                    No será lo mismo sin vosotros<br>
+                    <span style="font-size: 2.5rem; font-weight: 600; font-style: italic; color: #FFFFFF; text-shadow: 2px 2px 4px rgba(68,68,68,0.8);">¡Os esperamos!</span>
+                 </p>
+            </div>
+            <img src="fotofinal.jpeg" class="main-img">
+        </section>
     </div>
 
     <script>
@@ -282,13 +305,8 @@
         }
         function enviarWhatsApp() {
             const total = document.getElementById('num-total').value;
-            const bus = document.getElementById('check-bus').checked ? "SÍ" : "NO";
-            const hotel = document.getElementById('check-hotel').checked ? "SÍ" : "NO";
-            const c = document.getElementById('count-carrilleras').value || 0;
-            const m = document.getElementById('count-merluza').value || 0;
-            const notas = document.getElementById('input-intolerancia').value || "Ninguna";
-            let msj = `¡Hola Rafa y Ana! Confirmo asistencia.%0A%0A- Personas: ${total}%0A- Bus: ${bus}%0A- Hotel: ${hotel}%0A- Menú: ${c} Carrilleras / ${m} Merluzas%0A- Notas: ${notas}`;
-            window.open(`https://wa.me/34600000000?text=${msj}`, '_blank');
+            const msj = `¡Hola Rafa y Ana! Confirmo asistencia para ${total} personas.`;
+            window.open(`https://wa.me/34600000000?text=${encodeURIComponent(msj)}`, '_blank');
         }
         const target = new Date("Aug 15, 2026 18:00:00").getTime();
         setInterval(() => {
