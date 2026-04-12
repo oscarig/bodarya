@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Boda Rafa & Ana - 15.08.2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@100;200;300;400;600&display=swap" rel="stylesheet">
     <style>
@@ -10,7 +10,6 @@
             --color-oro: #c5a059;
             --texto-secciones: #90908e;
             --ancho-max: 520px;
-            --alto-seccion: 910px;
         }
 
         /* RESET & BASE */
@@ -23,27 +22,25 @@
             background-image: url('fondo.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
+            /* Eliminamos background-attachment: fixed que rompe en iPhone */
             color: #4a4a4a;
             text-align: center;
             overflow-x: hidden;
         }
 
-        /* PANTALLA DE INICIO - CENTRADA Y GRIS MÁS FUERTE */
+        /* PANTALLA DE INICIO */
         #intro-overlay {
             position: fixed; top: 0; left: 50%; transform: translateX(-50%);
             width: 100%; max-width: var(--ancho-max); height: 100%;
             background-image: url('fondoprincipal.jpeg');
             background-size: cover; background-position: center; z-index: 9999;
             display: flex; flex-direction: column; align-items: center; 
-            justify-content: center; 
-            cursor: pointer; transition: opacity 0.8s ease;
+            justify-content: center; cursor: pointer; transition: opacity 0.8s ease;
             box-shadow: 0 0 50px rgba(0,0,0,0.2);
         }
-        
         .intro-text-block { display: flex; flex-direction: column; align-items: center; padding: 20px; }
         .announcement { font-weight: 200; font-size: 1.1rem; letter-spacing: 6px; color: #a0a0a0; text-transform: uppercase; text-shadow: 0 1px 4px rgba(0,0,0,0.3); margin-bottom: 20px; }
-        .tap-msg { color: #a0a0a0; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; text-shadow: 0 1px 3px rgba(0,0,0,0.3); font-weight: 400; opacity: 0.8; }
+        .tap-msg { color: #a0a0a0; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 400; opacity: 0.8; }
 
         /* BLOQUE CENTRAL */
         .main-wrapper {
@@ -52,7 +49,9 @@
         }
 
         section { 
-            height: var(--alto-seccion); width: 100%; position: relative;
+            /* Cambiamos px por dvh (altura dinámica de pantalla móvil) */
+            height: 100dvh; 
+            width: 100%; position: relative;
             display: flex; flex-direction: column; overflow: hidden;
             background-size: cover; background-position: center;
         }
@@ -68,61 +67,42 @@
         .section-ceremony { background-image: url('ceremonia.jpeg'); }
         .section-banquet { background-image: url('banquete.jpeg'); }
 
-        .text-container-bottom { position: absolute; bottom: 0; left: 0; width: 100%; padding: 40px 25px 60px 25px; display: flex; flex-direction: column; align-items: center; z-index: 2; }
-        .text-container-top { position: absolute; top: 0; left: 0; width: 100%; padding: 60px 25px 40px 25px; display: flex; flex-direction: column; align-items: center; z-index: 2; }
-        
-        .poem-container { height: 100%; padding: 80px 35px; display: flex; flex-direction: column; justify-content: space-evenly; align-items: center; z-index: 2; }
+        .text-container-bottom { position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px 25px 50px 25px; display: flex; flex-direction: column; align-items: center; z-index: 2; }
+        .text-container-top { position: absolute; top: 0; left: 0; width: 100%; padding: 50px 25px 30px 25px; display: flex; flex-direction: column; align-items: center; z-index: 2; }
+        .poem-container { height: 100%; padding: 40px 35px; display: flex; flex-direction: column; justify-content: space-evenly; align-items: center; z-index: 2; }
         .text-container-center { padding: 0 35px; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 2; }
 
-        h2 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 2.2rem; margin-bottom: 10px; color: #90908e; }
-        p { color: #90908e; line-height: 1.6; }
-
-        .gold-label { font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-top: 5px; display: block; color: var(--color-oro); font-size: 1.1rem; }
+        h2 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 2rem; margin-bottom: 10px; color: #90908e; }
+        p { color: #90908e; line-height: 1.5; font-size: 0.95rem; }
+        .gold-label { font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-top: 5px; display: block; color: var(--color-oro); font-size: 1rem; }
 
         /* PORTADA */
-        .hero-black-text { color: #000000 !important; font-weight: 100 !important; letter-spacing: 3px; text-transform: uppercase; margin: 0 !important; padding: 0 !important; line-height: 1.0 !important; }
+        .hero-black-text { color: #000000 !important; font-weight: 100 !important; letter-spacing: 3px; text-transform: uppercase; line-height: 1.0 !important; font-size: 1.5rem; }
 
         /* CONTADOR */
-        .countdown-container { position: absolute; bottom: 80px; left: 50%; transform: translateX(-50%); width: 100%; z-index: 10; display: flex; flex-direction: column; align-items: center; }
+        .countdown-container { position: absolute; bottom: 60px; left: 50%; transform: translateX(-50%); width: 100%; z-index: 10; display: flex; flex-direction: column; align-items: center; }
         .countdown-boxes { display: flex; align-items: center; justify-content: center; gap: 5px; width: 100%; margin-top: 10px; }
         .time-unit { text-align: center; display: flex; align-items: baseline; }
-        .time-unit span { display: block; font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--color-oro); font-weight: 400; }
-        .time-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; color: var(--color-oro); font-weight: 600; margin-left: 4px; }
-        .separator { font-size: 1.5rem; color: var(--color-oro); margin: 0 10px; font-weight: 300; opacity: 0.7; padding-bottom: 8px; }
+        .time-unit span { display: block; font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--color-oro); font-weight: 400; }
+        .time-label { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1px; color: var(--color-oro); font-weight: 600; margin-left: 4px; }
+        .separator { font-size: 1.2rem; color: var(--color-oro); margin: 0 5px; opacity: 0.7; }
 
         /* BOTONES */
-        .btn-circle { display: flex; align-items: center; justify-content: center; width: 75px; height: 75px; border-radius: 50%; margin-top: 10px; background-image: url('clic.jpeg'); background-size: 50%; background-position: center; background-repeat: no-repeat; z-index: 30; border: none; background-color: rgba(255,255,255,0.6); backdrop-filter: blur(2px); cursor: pointer; border: 1px solid white; }
-        
-        /* BOTONES ASISTENCIA IGUALADOS A 85PX */
-        .btn-cam-rsvp { 
-            background-image: url('camrafotofiltro.jpeg') !important; 
-            background-size: cover !important; 
-            background-position: center !important; 
-            width: 85px !important; 
-            height: 85px !important; 
-            border-radius: 50% !important; 
-            border: 1px solid white !important; 
-            margin: 10px auto !important; 
-            cursor: pointer; 
-        }
-        .btn-hotel-rsvp {
-            width: 85px !important; 
-            height: 85px !important; 
-            background-size: 45% !important;
-            margin: 10px auto !important;
-        }
+        .btn-circle { display: flex; align-items: center; justify-content: center; width: 70px; height: 70px; border-radius: 50%; margin-top: 10px; background-image: url('clic.jpeg'); background-size: 50%; background-position: center; background-repeat: no-repeat; z-index: 30; border: none; background-color: rgba(255,255,255,0.6); backdrop-filter: blur(2px); cursor: pointer; border: 1px solid white; }
+        .btn-cam-rsvp { background-image: url('camrafotofiltro.jpeg') !important; background-size: cover !important; background-position: center !important; width: 85px !important; height: 85px !important; border-radius: 50% !important; border: 1px solid white !important; margin: 10px auto !important; cursor: pointer; }
+        .btn-hotel-rsvp { width: 85px !important; height: 85px !important; background-size: 45% !important; margin: 10px auto !important; }
 
         /* FORMULARIO RSVP */
-        .rsvp-form { width: 100%; max-width: 340px; margin-top: 5px; text-align: left; }
-        .form-group { display: flex; align-items: center; margin-bottom: 8px; font-size: 0.85rem; color: #4a4a4a; }
-        .form-group input[type="checkbox"] { margin-right: 12px; accent-color: var(--color-oro); width: 18px; height: 18px; }
-        .total-input-box { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; padding: 5px 0; border-bottom: 1px solid #eee; }
-        .total-input-box input { width: 55px; padding: 5px; border: 1px solid #ddd; border-radius: 5px; text-align: center; }
-        .menu-title { font-weight: 600; color: var(--color-oro); font-size: 0.85rem; margin: 10px 0 5px 0; text-transform: uppercase; letter-spacing: 1px;}
-        .intolerancia-input { width: 100%; padding: 8px; border: 1px solid #eee; border-radius: 8px; font-family: 'Montserrat'; font-size: 0.85rem; margin-top: 5px; background: #fff; }
-        .plate-selector { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-size: 0.85rem; background: rgba(255,255,255,0.7); padding: 5px 10px; border-radius: 8px; }
-        .plate-selector input { width: 55px; padding: 4px; border: 1px solid #ddd; border-radius: 5px; text-align: center; font-weight: 600; color: var(--color-oro); }
-        .btn-label { display: block; font-size: 0.8rem; margin-top: 5px; color: #90908e; }
+        .rsvp-form { width: 100%; max-width: 320px; margin-top: 5px; text-align: left; }
+        .form-group { display: flex; align-items: center; margin-bottom: 6px; font-size: 0.8rem; color: #4a4a4a; }
+        .form-group input[type="checkbox"] { margin-right: 12px; accent-color: var(--color-oro); width: 16px; height: 16px; }
+        .total-input-box { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; padding: 3px 0; border-bottom: 1px solid #eee; font-size: 0.85rem; }
+        .total-input-box input { width: 45px; padding: 3px; border: 1px solid #ddd; border-radius: 5px; text-align: center; }
+        .menu-title { font-weight: 600; color: var(--color-oro); font-size: 0.8rem; margin: 8px 0 4px 0; text-transform: uppercase; letter-spacing: 1px;}
+        .intolerancia-input { width: 100%; padding: 6px; border: 1px solid #eee; border-radius: 8px; font-family: 'Montserrat'; font-size: 0.8rem; margin-top: 5px; background: #fff; }
+        .plate-selector { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; font-size: 0.8rem; background: rgba(255,255,255,0.7); padding: 4px 10px; border-radius: 8px; }
+        .plate-selector input { width: 45px; padding: 2px; border: 1px solid #ddd; border-radius: 5px; text-align: center; font-weight: 600; color: var(--color-oro); }
+        .btn-label { display: block; font-size: 0.75rem; margin-top: 5px; color: #90908e; }
 
         #music-control { position: fixed; bottom: 20px; right: 20px; z-index: 1000; background: white; width: 45px; height: 45px; border-radius: 50%; display: none; align-items: center; justify-content: center; border: 1px solid var(--color-oro); }
     </style>
@@ -141,16 +121,15 @@
     <div id="music-control" onclick="toggleMusic()"> <span id="music-status">▶</span> </div>
 
     <div class="main-wrapper">
-        
         <section>
             <div class="img-overlay-container">
                 <div style="position: absolute; top: 40px; left: 30px; z-index: 10; text-align: left; color: white;">
-                    <span style="font-family:'Montserrat'; font-size:3rem; font-weight:200; text-transform:uppercase;">ANA</span><br>
-                    <span style="font-family:'Montserrat'; font-size:3rem; font-weight:200; text-transform:uppercase;">& RAFAEL</span>
+                    <span style="font-family:'Montserrat'; font-size:2.5rem; font-weight:200; text-transform:uppercase;">ANA</span><br>
+                    <span style="font-family:'Montserrat'; font-size:2.5rem; font-weight:200; text-transform:uppercase;">& RAFAEL</span>
                 </div>
                 <div style="position: absolute; bottom: 50px; right: 35px; z-index: 10; text-align: right;">
-                    <p class="hero-black-text" style="font-size:1.7rem;">15.08.2026</p>
-                    <p class="hero-black-text" style="font-size:1.7rem;">NOS CASAMOS</p>
+                    <p class="hero-black-text">15.08.2026</p>
+                    <p class="hero-black-text">NOS CASAMOS</p>
                 </div>
                 <img src="primerafoto.jpeg" class="main-img">
             </div>
@@ -158,12 +137,12 @@
 
         <section class="section-poem">
             <div class="poem-container">
-                <p style="font-family:'Playfair Display', serif; font-size:1.4rem; line-height: 1.5;">Entre leyes, cafés y alguna que otra salida…. nos conocimos.</p>
-                <p style="font-family:'Playfair Display', serif; font-size:1.4rem; line-height: 1.5;">Desde entonces aprendimos que el amor, como la vida, va de acompañarse.</p>
-                <p style="font-family:'Playfair Display', serif; font-size:1.4rem; line-height: 1.5;">Nos hace muchísima ilusión compartir este día con vosotros, porque no es solo una boda, es una celebración íntima con las personas verdaderamente indispensables.</p>
+                <p style="font-family:'Playfair Display', serif; font-size:1.2rem; line-height: 1.5;">Entre leyes, cafés y alguna que otra salida…. nos conocimos.</p>
+                <p style="font-family:'Playfair Display', serif; font-size:1.2rem; line-height: 1.5;">Desde entonces aprendimos que el amor, como la vida, va de acompañarse.</p>
+                <p style="font-family:'Playfair Display', serif; font-size:1.2rem; line-height: 1.5;">Nos hace muchísima ilusión compartir este día con vosotros, porque no es solo una boda, es una celebración íntima con las personas verdaderamente indispensables.</p>
                 <div>
-                    <p style="font-family:'Playfair Display', serif; font-size:1.4rem; color: var(--color-oro); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px;">Nuestra única petición:</p>
-                    <p style="font-family:'Playfair Display', serif; font-size:1.4rem; line-height: 1.6;">olvidaros del reloj, bailad, comed, reíd y defended el derecho a disfrutar sin límites.</p>
+                    <p style="font-family:'Playfair Display', serif; font-size:1.2rem; color: var(--color-oro); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px;">Nuestra única petición:</p>
+                    <p style="font-family:'Playfair Display', serif; font-size:1.2rem; line-height: 1.6;">olvidaros del reloj, bailad, comed, reíd y defended el derecho a disfrutar sin límites.</p>
                 </div>
             </div>
         </section>
@@ -171,7 +150,7 @@
         <section>
             <div class="img-overlay-container">
                 <div class="countdown-container">
-                    <p style="font-size:0.9rem; color: #4a4a4a; letter-spacing: 3px; text-transform: uppercase; font-weight: 400;">Cada día falta menos...</p>
+                    <p style="font-size:0.8rem; color: #4a4a4a; letter-spacing: 3px; text-transform: uppercase; font-weight: 400;">Cada día falta menos...</p>
                     <div class="countdown-boxes">
                         <div class="time-unit"><span id="days">00</span><div class="time-label">dd</div></div>
                         <div class="separator">:</div>
@@ -190,8 +169,8 @@
             <div class="text-container-bottom">
                 <h2>Ceremonia</h2>
                 <p style="font-weight:500;">Santuario de la Inmaculada Concepción</p>
-                <p style="font-size:0.85rem;">C. del Sol, 39, 11300 La Línea, Cádiz</p>
-                <a href="https://maps.app.goo.gl/yQYmQ8m5uR9z2VvX8" target="_blank" class="btn-circle"></a>
+                <p style="font-size:0.8rem;">C. del Sol, 39, 11300 La Línea, Cádiz</p>
+                <a href="https://maps.app.goo.gl/..." target="_blank" class="btn-circle"></a>
                 <span class="btn-label">(Cómo llegar)</span>
             </div>
         </section>
@@ -200,29 +179,29 @@
             <div class="text-container-top">
                 <h2>Banquete</h2>
                 <p style="font-weight:500;">Cortijo de Soto de Roma</p>
-                <p style="font-size:0.85rem;">Diseminado Poligono 23, 8, 11370 Los Barrios, Cádiz</p>
-                <a href="https://maps.app.goo.gl/uXv7k9j5Z6z8L4mR7" target="_blank" class="btn-circle"></a>
+                <p style="font-size:0.8rem;">Diseminado Poligono 23, 8, 11370 Los Barrios, Cádiz</p>
+                <a href="https://maps.app.goo.gl/..." target="_blank" class="btn-circle"></a>
                 <span class="btn-label">(Cómo llegar)</span>
             </div>
         </section>
 
         <section class="section-itinerary">
             <div class="text-container-center">
-                <h2 style="margin-bottom: 25px;">Horarios</h2>
-                <div style="margin-bottom:20px;"><span class="gold-label">Ceremonia</span><p>18:15 h (Puntualidad 💛)</p></div>
-                <div style="margin-bottom:20px;"><span class="gold-label">Traslado a la finca</span><p>20:30 – 21:00 h</p></div>
-                <div style="margin-bottom:20px;"><span class="gold-label">🥂 Cóctel</span><p>21:00 h</p></div>
-                <div style="margin-bottom:20px;"><span class="gold-label">🍽️ Cena</span><p>22:00 h</p></div>
-                <div style="margin-bottom:20px;"><span class="gold-label">Fiesta</span><p>01:00 – 05:00 h (💃🕺)</p></div>
-                <p style="margin-top:15px; font-size:0.8rem; border-top:1px solid var(--color-oro); padding-top:15px;">Posdata; para disfrutar al máximo de la fiesta, recomendamos llevar un calzado cómodo (o un segundo par).</p>
+                <h2 style="margin-bottom: 20px;">Horarios</h2>
+                <div style="margin-bottom:15px;"><span class="gold-label">Ceremonia</span><p>18:15 h (Puntualidad 💛)</p></div>
+                <div style="margin-bottom:15px;"><span class="gold-label">Traslado a la finca</span><p>20:30 – 21:00 h</p></div>
+                <div style="margin-bottom:15px;"><span class="gold-label">🥂 Cóctel</span><p>21:00 h</p></div>
+                <div style="margin-bottom:15px;"><span class="gold-label">🍽️ Cena</span><p>22:00 h</p></div>
+                <div style="margin-bottom:15px;"><span class="gold-label">Fiesta</span><p>01:00 – 05:00 h (💃🕺)</p></div>
+                <p style="margin-top:10px; font-size:0.75rem; border-top:1px solid var(--color-oro); padding-top:10px;">Posdata; recomendamos llevar calzado cómodo (o un segundo par).</p>
             </div>
         </section>
 
         <section class="section-dresscode">
             <div class="text-container-center">
-                <h2 style="font-size:2.8rem; margin-bottom: 30px;">Código de Vestimenta</h2>
-                <p style="font-style:italic; margin-bottom: 30px; font-size:1.15rem;">Para acompañarnos en este día tan especial, os proponemos un estilo formal y elegante:</p>
-                <div style="margin-bottom: 30px;"><span class="gold-label">Hombres</span><p>Traje chaqueta y corbata.</p></div>
+                <h2 style="font-size:2.2rem; margin-bottom: 20px;">Código de Vestimenta</h2>
+                <p style="font-style:italic; margin-bottom: 20px; font-size:1rem;">Para acompañarnos en este día tan especial, os proponemos un estilo formal y elegante:</p>
+                <div style="margin-bottom: 20px;"><span class="gold-label">Hombres</span><p>Traje chaqueta y corbata.</p></div>
                 <div><span class="gold-label">Mujeres</span><p style="max-width:90%; margin: 0 auto;">Evitad colores claros (blanco, beige, nude...) para reservarlos para la novia.</p></div>
             </div>
         </section>
@@ -240,24 +219,23 @@
                     <p class="menu-title">Selección de Menú</p>
                     <div class="plate-selector"><span>Carrilleras ibéricas</span><input type="number" id="count-carrilleras" value="0" min="0" oninput="controlarPlatos()"></div>
                     <div class="plate-selector"><span>Lomo de merluza</span><input type="number" id="count-merluza" value="0" min="0" oninput="controlarPlatos()"></div>
-                    <p id="aviso-platos" style="font-size: 0.7rem; color: var(--color-oro); text-align: center;">Platos por asignar: <span id="platos-libres">1</span></p>
+                    <p id="aviso-platos" style="font-size: 0.65rem; color: var(--color-oro); text-align: center;">Platos por asignar: <span id="platos-libres">1</span></p>
                     <p class="menu-title">Intolerancias / Alergias</p>
-                    <input type="text" id="input-intolerancia" class="intolerancia-input" placeholder="Ej: Celíaco, sin lactosa...">
+                    <input type="text" id="input-intolerancia" class="intolerancia-input" placeholder="Ej: Celíaco...">
                 </div>
                 <div class="btn-cam-rsvp" onclick="enviarWhatsApp()"></div>
-                <span class="btn-label" style="color:#90908e;">(Toca la cámara para confirmar)</span>
-                
-                <span class="gold-label" style="margin-top:15px; font-size: 1.1rem;">Hotel Montera Plaza</span>
-                <a href="https://maps.app.goo.gl/GX3fhYjsDA0RUtxbc" target="_blank" class="btn-circle btn-hotel-rsvp"></a>
-                <span class="btn-label" style="color:#90908e;">(Cómo llegar)</span>
+                <span class="btn-label">(Toca para confirmar)</span>
+                <span class="gold-label" style="margin-top:10px; font-size: 1rem;">Hotel Montera Plaza</span>
+                <a href="https://maps.app.goo.gl/..." target="_blank" class="btn-circle btn-hotel-rsvp"></a>
+                <span class="btn-label">(Cómo llegar)</span>
             </div>
         </section>
 
         <section>
             <div style="position: absolute; top: 0; left: 0; width: 100%; height: 42%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; z-index: 10; padding-bottom: 10px;">
-                <p style="font-family:'Playfair Display', serif; font-size:1.5rem; color: #4a4a4a; text-shadow: 0 0 10px white; margin-bottom: 10px; padding: 0 20px;">¡Ayúdanos a crear el álbum perfecto!</p>
-                <p style="font-family:'Playfair Display', serif; font-size:1.1rem; color: #4a4a4a; text-shadow: 0 0 10px white; padding: 0 40px; line-height: 1.4;">Comparte con nosotros las fotos que realices en nuestro Gran Día.</p>
-                <a href="https://photos.google.com/share/AF1QipNcvA8wZARAC574Aav43ezRvOAHA05oe9-eZWkBJ_iVMdaaCxcRy2yeLUPecAB2pA?key=LV9qSi1oSlFyOVlZaEdfMEpBbDFneDgtQXdCUnhn" target="_blank" style="width: 85px; height: 85px; border-radius: 50%; background-image: url('iconoimagenes.jpeg'); background-size: cover; background-position: center; border: 2px solid white; box-shadow: 0 4px 15px rgba(0,0,0,0.15); margin-top: 20px; display: block;"></a>
+                <p style="font-family:'Playfair Display', serif; font-size:1.3rem; color: #4a4a4a; text-shadow: 0 0 10px white; margin-bottom: 10px;">¡Ayúdanos a crear el álbum perfecto!</p>
+                <p style="font-family:'Playfair Display', serif; font-size:1rem; color: #4a4a4a; text-shadow: 0 0 10px white; padding: 0 40px; line-height: 1.4;">Comparte con nosotros las fotos que realices en nuestro Gran Día.</p>
+                <a href="https://photos.app.goo.gl/..." target="_blank" style="width: 80px; height: 80px; border-radius: 50%; background-image: url('iconoimagenes.jpeg'); background-size: cover; background-position: center; border: 2px solid white; box-shadow: 0 4px 15px rgba(0,0,0,0.15); margin-top: 15px; display: block;"></a>
                 <span style="font-size: 0.7rem; color: var(--color-oro); font-weight: 600; margin-top: 5px; text-transform: uppercase; letter-spacing: 1px; text-shadow: 0 0 5px white;">(Subir fotos)</span>
             </div>
             <img src="quintafoto.jpeg" class="main-img">
@@ -290,15 +268,12 @@
             const displayLibres = document.getElementById('platos-libres');
             let valCarri = parseInt(inCarri.value) || 0;
             let valMerlu = parseInt(inMerlu.value) || 0;
-
             if (valCarri + valMerlu > total) {
                 const diff = (valCarri + valMerlu) - total;
                 if (window.event && window.event.target.id === 'count-carrilleras') inCarri.value = Math.max(0, valCarri - diff);
                 else inMerlu.value = Math.max(0, valMerlu - diff);
             }
-            valCarri = parseInt(inCarri.value) || 0;
-            valMerlu = parseInt(inMerlu.value) || 0;
-            displayLibres.innerText = Math.max(0, total - (valCarri + valMerlu));
+            displayLibres.innerText = Math.max(0, total - (parseInt(inCarri.value) + parseInt(inMerlu.value)));
         }
 
         function enviarWhatsApp() {
@@ -314,11 +289,7 @@
                 return;
             }
 
-            let msj = `¡Hola Rafa y Ana! Confirmo asistencia a vuestra boda.%0A%0A`;
-            msj += `- ¿Bus?: ${bus}%0A- ¿Hotel?: ${hotel}%0A`;
-            msj += `- Asistencia: ${total} personas%0A- Menú: ${cArrilleras} Carrilleras e ${mErluza} Merluzas%0A`;
-            msj += `- Intolerancias: ${intolerancia}`;
-            
+            let msj = `¡Hola Rafa y Ana! Confirmo asistencia a vuestra boda.%0A%0A- Bus: ${bus}%0A- Hotel: ${hotel}%0A- Personas: ${total}%0A- Menú: ${cArrilleras} Carrilleras e ${mErluza} Merluzas%0A- Notas: ${intolerancia}`;
             window.open(`https://wa.me/34600000000?text=${msj}`, '_blank');
         }
 
