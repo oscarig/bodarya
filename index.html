@@ -45,19 +45,15 @@
             display: flex; flex-direction: column; overflow: hidden;
         }
 
-        /* CLASE ESPECIAL PARA SECCIÓN LARGA */
+        /* SECCIÓN AUTO-AJUSTABLE PARA ASISTENCIA */
         .section-auto {
             height: auto !important;
             min-height: 100dvh;
             overflow: visible !important;
-            padding-bottom: 50px; /* Espacio extra al final */
+            padding-bottom: 60px;
         }
 
         .main-img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; z-index: 1; }
-        
-        /* Ajuste para que la imagen de fondo en secciones largas cubra todo el alto real */
-        .section-auto .main-img { height: 100%; object-fit: cover; position: absolute; }
-
         .content-overlay { position: relative; z-index: 10; width: 100%; height: 100%; display: flex; flex-direction: column; }
 
         h2 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 2.2rem; color: #90908e; margin-bottom: 10px; }
@@ -227,13 +223,16 @@
         </section>
 
         <section class="section-auto">
-            <div class="content-overlay text-center" style="padding-top: 40px;">
-                <h2 style="margin-bottom: 10px;">Asistencia</h2>
+            <div class="content-overlay text-center" style="padding-top: 30px;">
+                <h2 style="margin-bottom: 5px;">Asistencia</h2>
                 
-                <p style="font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; padding: 0 25px; color: #555; font-weight: 400;">
+                <p style="font-size: 0.95rem; line-height: 1.4; margin-bottom: 15px; padding: 0 20px; color: #555; font-weight: 400;">
                     Queremos que disfrutéis sin preocupaciones, por eso hemos organizado transporte en autobús desde la iglesia a la finca y de vuelta.
                     <br><br>
-                    También podéis reservar alojamiento en el hotel cercano (75€/ habitación doble con desayuno y salida tardía).
+                    También podéis reservar alojamiento en el <br>
+                    <strong>Hotel Montera Plaza</strong> <br>
+                    (Distancia de la finca 10 minutos, <br>
+                    75€/ habitación doble con desayuno y salida tardía).
                 </p>
 
                 <div style="width:100%; max-width:360px; margin:0 auto; text-align:left;">
@@ -271,7 +270,7 @@
                 <span style="font-size:0.8rem; color:#888; font-weight: 500;">(Toca la cámara para confirmar)</span>
                 
                 <span class="gold-label" style="font-size:1rem; margin-top:20px;">Hotel Montera Plaza</span>
-                <a href="https://maps.app.goo.gl/9R6P7Wv8E8X2F3k8A" target="_blank" class="btn-circle" style="width:50px; height:50px; margin: 10px auto;"></a>
+                <a href="https://maps.app.goo.gl/9R6P7Wv8E8X2F3k8A" target="_blank" class="btn-circle" style="width:45px; height:45px; margin: 5px auto;"></a>
             </div>
             <img src="fondo_asistencia.jpeg" class="main-img" style="height: 100%; min-height: 100vh;">
         </section>
