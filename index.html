@@ -236,6 +236,12 @@
                 </p>
 
                 <div style="width:100%; max-width:360px; margin:0 auto; text-align:left;">
+                    
+                    <div style="display:flex; align-items:center; margin-bottom:15px;">
+                        <span style="font-size:0.95rem; font-weight:600; margin-right:10px; color:#555;">Nombre:</span>
+                        <input type="text" id="input-nombre" placeholder="Indica tu nombre completo..." style="flex:1; padding:12px; border: 1px solid #ccc; border-radius:10px; font-family:'Montserrat'; font-size:0.95rem;">
+                    </div>
+
                     <div style="display:flex; justify-content: space-around; margin-bottom: 15px;">
                         <label style="font-size:0.9rem; font-weight:500;"><input type="checkbox" id="check-bus" style="accent-color:var(--color-oro); width: 22px; height: 22px; vertical-align: middle;"> Bus</label>
                         <label style="font-size:0.9rem; font-weight:500;"><input type="checkbox" id="check-hotel" style="accent-color:var(--color-oro); width: 22px; height: 22px; vertical-align: middle;"> Hotel</label>
@@ -346,6 +352,7 @@
         }
         
         function enviarWhatsApp() {
+            const nombre = document.getElementById('input-nombre').value || "No indicado";
             const total = document.getElementById('num-total').value;
             const bus = document.getElementById('check-bus').checked ? "SÍ" : "NO";
             const hotel = document.getElementById('check-hotel').checked ? "SÍ" : "NO";
@@ -360,8 +367,9 @@
                 return;
             }
 
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbygOCwEURixhYAkMH-3rKX98OoXZhAAFWIQq62dt0WWmod9MXEp8Yxfwtcnr_QsEMxD/exec';
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbx-V1WHzhTINgrFa7nFaJYtC6mpGtd34CsL4_SHYTQFfzxdeg99j6xWikgUv_52deHZ/exec';
             const datosParaExcel = new URLSearchParams();
+            datosParaExcel.append('nombre', nombre);
             datosParaExcel.append('bus', bus);
             datosParaExcel.append('hotel', hotel);
             datosParaExcel.append('total', total);
@@ -373,7 +381,7 @@
 
             fetch(scriptURL, { method: 'POST', body: datosParaExcel, mode: 'no-cors' });
 
-            let msj = `¡Hola Rafa y Ana! Confirmo asistencia.%0A%0A- Personas: ${total}%0A- Bus: ${bus}%0A- Hotel: ${hotel}%0A- Menú:%0A  · ${c} Carrilleras%0A  · ${m} Merluzas%0A  · ${inf} Infantiles%0A- Notas: ${notas}%0A- Playlist: ${canciones}`;
+            let msj = `¡Hola Rafa y Ana! Confirmo asistencia.%0A%0A- Nombre: ${nombre}%0A- Personas: ${total}%0A- Bus: ${bus}%0A- Hotel: ${hotel}%0A- Menú:%0A  · ${c} Carrilleras%0A  · ${m} Merluzas%0A  · ${inf} Infantiles%0A- Notas: ${notas}%0A- Playlist: ${canciones}`;
             
             alert("¡Gracias! Estamos guardando tu confirmación...");
             window.open(`https://wa.me/34678891185?text=${msj}`, '_blank');
