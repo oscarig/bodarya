@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Boda Rafa & Ana - 15.08.2026</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,300;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
         :root {
             --color-oro: #c5a059;
             --color-oro-claro: #e6c27a;
-            --texto-secciones: #90908e;
+            --texto-secciones: #333333; /* Gris Grafito */
             --ancho-max: 520px;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
         
         body {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 300;
+            font-family: 'Great Vibes', cursive;
+            font-weight: 400;
             background-color: #fcfbf9;
-            color: #4a4a4a;
+            color: #333333; 
             text-align: center;
             overflow-x: hidden;
+            font-size: 1.2rem;
         }
 
         #intro-overlay {
@@ -32,8 +33,8 @@
             display: flex; flex-direction: column; align-items: center; 
             justify-content: center; cursor: pointer; transition: opacity 0.8s ease;
         }
-        .announcement { font-weight: 200; font-size: 1.1rem; letter-spacing: 6px; color: #a0a0a0; text-transform: uppercase; margin-bottom: 20px; }
-        .tap-msg { color: #a0a0a0; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; opacity: 0.8; }
+        .announcement { font-size: 1.8rem; color: #333333; margin-bottom: 20px; }
+        .tap-msg { color: #333333; font-size: 1.1rem; opacity: 0.8; }
 
         .main-wrapper {
             max-width: var(--ancho-max); margin: 0 auto;
@@ -45,7 +46,6 @@
             display: flex; flex-direction: column; overflow: hidden;
         }
 
-        /* SECCIÓN AUTO-AJUSTABLE PARA ASISTENCIA */
         .section-auto {
             height: auto !important;
             min-height: 100dvh;
@@ -56,9 +56,9 @@
         .main-img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; z-index: 1; }
         .content-overlay { position: relative; z-index: 10; width: 100%; height: 100%; display: flex; flex-direction: column; }
 
-        h2 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 2.2rem; color: #90908e; margin-bottom: 10px; }
-        p { color: #90908e; line-height: 1.6; font-size: 0.95rem; }
-        .gold-label { font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--color-oro); font-size: 1.1rem; margin-top: 5px; }
+        h2 { font-family: 'Great Vibes', cursive; font-weight: 400; font-size: 3.2rem; color: #333333; margin-bottom: 10px; }
+        p { color: #333333; line-height: 1.3; font-size: 1.7rem; }
+        .gold-label { color: var(--color-oro); font-size: 1.9rem; margin-top: 5px; }
 
         .poem-container { padding: 40px 35px; justify-content: space-evenly; align-items: center; }
         .text-center { justify-content: center; align-items: center; padding: 20px 35px; }
@@ -66,40 +66,59 @@
         .text-top { justify-content: flex-start; padding-top: 60px; padding-left: 35px; padding-right: 35px; }
         .full-stretch { justify-content: space-evenly; padding: 50px 30px; }
 
-        .hero-black-text { color: #000000 !important; font-weight: 500 !important; font-style: italic; letter-spacing: 2px; text-transform: uppercase; line-height: 1.1; font-size: 1.5rem; }
+        .hero-black-text { color: #333333 !important; font-weight: 400 !important; line-height: 1.1; font-size: 2.4rem; }
 
         .countdown-container { 
             margin-bottom: 80px; margin-top: auto; align-self: center;
             background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
             padding: 20px 20px; border-radius: 15px; width: 85%;
         }
-        .countdown-msg { font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; color: #222 !important; font-weight: 600 !important; font-style: italic; margin-bottom: 8px; }
-        .countdown-boxes { display: flex; align-items: center; justify-content: center; gap: 2px; }
+        .countdown-msg { font-size: 1.5rem; color: #333333 !important; font-weight: 400; margin-bottom: 8px; }
+        .countdown-boxes { display: flex; align-items: center; justify-content: center; gap: 5px; }
         .time-unit { display: flex; align-items: baseline; color: var(--color-oro-claro); }
-        .time-unit span { font-family: 'Playfair Display', serif; font-size: 1.9rem; font-weight: 600; }
-        .time-label { font-size: 0.55rem; text-transform: uppercase; margin-left: 2px; font-weight: 600; }
-        .separator { font-size: 1rem; color: var(--color-oro-claro); margin: 0 4px; opacity: 0.8; }
+        .time-unit span { font-size: 2.4rem; }
+        .time-label { font-size: 1rem; margin-left: 2px; }
+        .separator { font-size: 1.5rem; color: var(--color-oro-claro); margin: 0 4px; opacity: 0.8; }
 
-        .btn-circle { width: 75px; height: 75px; border-radius: 50%; background: rgba(255,255,255,0.6) url('clic.jpeg') no-repeat center/50%; border: 1px solid white; cursor: pointer; }
-        .btn-cam-rsvp { width: 60px; height: 60px; border-radius: 50% !important; background: url('camrafotofiltro.jpeg') center/cover; border: 1px solid white; cursor: pointer; margin: 10px auto; }
+        .btn-circle { width: 55px; height: 55px; border-radius: 50%; background: rgba(255,255,255,0.6) url('clic.jpeg') no-repeat center/50%; border: 1px solid white; cursor: pointer; }
+        .btn-cam-rsvp { width: 65px; height: 65px; border-radius: 50% !important; background: url('camrafotofiltro.jpeg') center/cover; border: 1px solid white; cursor: pointer; margin: 10px auto; }
 
         #music-control { position: fixed; bottom: 25px; right: 25px; z-index: 1000; cursor: pointer; display: none; background: transparent; border: none; }
         #music-status { color: white; font-size: 2.2rem; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
 
         .song-input {
-            width: 100%; max-width: 340px; height: 80px; padding: 12px; border: 1px solid #eee; border-radius: 15px;
-            background: rgba(255, 255, 255, 0.7); font-family: 'Montserrat', sans-serif; font-size: 0.85rem; resize: none; margin-top: 15px; outline: none; color: #333;
+            width: 100%; max-width: 340px; height: 100px; padding: 12px; border: 1px solid #eee; border-radius: 15px;
+            background: rgba(255, 255, 255, 0.7); font-family: 'Great Vibes', cursive; font-size: 1.5rem; resize: none; margin-top: 15px; outline: none; color: #333333;
         }
 
         .plate-selector {
             display: flex; justify-content: space-between; align-items: center;
             background: rgba(255, 255, 255, 0.9); padding: 10px 15px; border-radius: 12px; margin-bottom: 8px; border: 1px solid #f0f0f0;
         }
-        .plate-selector span { font-size: 0.8rem; line-height: 1.2; flex: 1; margin-right: 15px; color: #444; font-weight: 400; text-align: left; }
+        .plate-selector span { font-size: 1.3rem; line-height: 1.1; flex: 1; margin-right: 15px; color: #333333; text-align: left; }
         
         .input-number-grande {
-            width: 65px !important; height: 40px; text-align: center; border: 2px solid var(--color-oro);
-            border-radius: 8px; padding: 5px; font-size: 1.1rem; font-weight: 600; color: #333; background: #fff;
+            width: 65px !important; height: 45px; text-align: center; border: 2px solid var(--color-oro);
+            border-radius: 8px; padding: 5px; font-size: 1.6rem; font-family: 'Great Vibes', cursive; color: #333333; background: #fff;
+        }
+
+        input[type="text"] {
+            font-family: 'Great Vibes', cursive;
+        }
+        
+        /* Estilos específicos para texto de portada (Cursiva Elegante) */
+        .portada-info {
+            font-family: 'Great Vibes', cursive;
+            text-transform: none; /* Quitamos mayúsculas automáticas para cursiva */
+        }
+        .portada-info span {
+            font-size: 4rem; /* Ajuste de tamaño para nombres en cursiva */
+            display: block;
+        }
+        .portada-info p.hero-black-text {
+            font-size: 2.2rem; /* Ajuste para fecha y "Nos Casamos" */
+            color: #333333 !important; /* Mantenemos el grafito oscuro */
+            margin-top: 5px;
         }
     </style>
 </head>
@@ -119,14 +138,14 @@
     <div class="main-wrapper">
         
         <section>
-            <div class="content-overlay">
-                <div style="position: absolute; top: 40px; left: 30px; text-align: left; color: white;">
-                    <span style="font-size:2.5rem; font-weight:200; text-transform:uppercase; display:block;">ANA</span>
-                    <span style="font-size:2.5rem; font-weight:200; text-transform:uppercase; display:block;">& RAFAEL</span>
+            <div class="content-overlay portada-info">
+                <div style="position: absolute; top: 40px; left: 30px; text-align: left; color: 333333;">
+                    <span>Ana</span>
+                    <span>& Rafael</span>
                 </div>
                 <div style="position: absolute; bottom: 20px; right: 35px; text-align: right;">
                     <p class="hero-black-text">15.08.2026</p>
-                    <p class="hero-black-text">NOS CASAMOS</p>
+                    <p class="hero-black-text">Nos Casamos</p>
                 </div>
             </div>
             <img src="portadafoto.jpeg" class="main-img">
@@ -134,12 +153,12 @@
 
         <section>
             <div class="content-overlay poem-container">
-                <p style="font-family:'Playfair Display'; font-size:1.3rem;">Entre leyes, cafés y alguna que otra salida…. nos conocimos.</p>
-                <p style="font-family:'Playfair Display'; font-size:1.3rem;">Desde entonces aprendimos que el amor, como la vida, va de acompañarse.</p>
-                <p style="font-family:'Playfair Display'; font-size:1.3rem;">Nos hace muchísima ilusión compartir este día con vosotros, porque no es solo una boda, es una celebración íntima con las personas verdaderamente indispensables.</p>
+                <p>Entre leyes, cafés y alguna que otra salida…. nos conocimos.</p>
+                <p>Desde entonces aprendimos que el amor, como la vida, va de acompañarse.</p>
+                <p>Nos hace muchísima ilusión compartir este día con vosotros, porque no es solo una boda, es una celebración íntima con las personas verdaderamente indispensables.</p>
                 <div>
-                    <p style="color: var(--color-oro); text-transform: uppercase; font-size:1.3rem; margin-bottom: 10px;">Nuestra única petición:</p>
-                    <p style="font-family:'Playfair Display'; font-size:1.3rem;">olvidaros del reloj, bailad, comed, reíd y defended el derecho a disfrutar sin límites.</p>
+                    <p style="color: var(--color-oro); font-size: 2rem; margin-bottom: 10px;">Nuestra única petición:</p>
+                    <p>olvidaros del reloj, bailad, comed, reíd y defended el derecho a disfrutar sin límites.</p>
                 </div>
             </div>
             <img src="textofoto.jpeg" class="main-img">
@@ -166,10 +185,10 @@
         <section>
             <div class="content-overlay text-bottom">
                 <h2>Ceremonia</h2>
-                <p style="font-weight:500;">Santuario de la Inmaculada Concepción</p>
-                <p style="font-size:0.85rem;">C. del Sol, 39, 11300 La Línea, Cádiz</p>
+                <p style="font-size: 1.9rem; color: #333333;">Santuario de la Inmaculada Concepción</p>
+                <p style="font-size:1.5rem;">C. del Sol, 39, 11300 La Línea, Cádiz</p>
                 <a href="https://www.google.com/maps/place/Santuario+de+la+Inmaculada+Concepci%C3%B3n/@36.1622637,-5.3540499,17z/data=!4m14!1m7!3m6!1s0xd0cc08a7b2620dd:0x420eda603a4edd72!2sSantuario+de+la+Inmaculada+Concepci%C3%B3n!8m2!3d36.1622594!4d-5.351475!16s%2Fm%2F0pdc6ty!3m5!1s0xd0cc08a7b2620dd:0x420eda603a4edd72!8m2!3d36.1622594!4d-5.351475!16s%2Fm%2F0pdc6ty?entry=ttu&g_ep=EgoyMDI2MDQwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn-circle" style="margin: 15px auto;"></a>
-                <p style="font-size:0.75rem; margin-top:5px;">(Cómo llegar)</p>
+                <p style="font-size:1rem;">(Cómo llegar)</p>
             </div>
             <img src="ceremoniafoto.jpeg" class="main-img">
         </section>
@@ -177,10 +196,10 @@
         <section>
             <div class="content-overlay text-top">
                 <h2>Banquete</h2>
-                <p style="font-weight:500;">Cortijo de Soto de Roma</p>
-                <p style="font-size:0.85rem;">Diseminado Poligono 23, 8, 11370 Los Barrios, Cádiz</p>
+                <p style="font-size: 1.9rem; color: #333333;">Cortijo de Soto de Roma</p>
+                <p style="font-size:1.5rem;">Diseminado Poligono 23, 8, 11370 Los Barrios, Cádiz</p>
                 <a href="https://www.google.com/maps/place/Finca+Soto+de+Roma/@36.2053185,-5.5334236,17z/data=!3m1!4b1!4m6!3m5!1s0xd0ced9816f81d4f:0xa7f8963e474fe2e0!8m2!3d36.2053142!4d-5.5308487!16s%2Fg%2F11h56q5kwr?entry=ttu&g_ep=EgoyMDI2MDQwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn-circle" style="margin: 15px auto;"></a>
-                <p style="font-size:0.75rem; margin-top:5px;">(Cómo llegar)</p>
+                <p style="font-size:1rem;">(Cómo llegar)</p>
             </div>
             <img src="banquetefoto.jpeg" class="main-img">
         </section>
@@ -193,7 +212,7 @@
                 <div><span class="gold-label">🥂 Cóctel</span><p>21:00 h</p></div>
                 <div><span class="gold-label">🍽️ Cena</span><p>22:00 h</p></div>
                 <div><span class="gold-label">Fiesta</span><p>01:00 – 05:00 h (💃🕺)</p></div>
-                <p style="font-size:0.85rem; border-top:1px solid var(--color-oro); padding-top:15px; margin-top:10px;">Posdata: recomendamos llevar calzado cómodo (o un segundo par).</p>
+                <p style="font-size:1.4rem; border-top:1px solid var(--color-oro); padding-top:15px; margin-top:10px;">Posdata: recomendamos llevar calzado cómodo (o un segundo par).</p>
             </div>
             <img src="itinerariofoto.jpeg" class="main-img">
         </section>
@@ -226,7 +245,7 @@
             <div class="content-overlay text-center" style="padding-top: 30px;">
                 <h2 style="margin-bottom: 5px;">Asistencia</h2>
                 
-                <p style="font-size: 0.95rem; line-height: 1.4; margin-bottom: 15px; padding: 0 20px; color: #555; font-weight: 400;">
+                <p style="font-size: 1.5rem; line-height: 1.2; margin-bottom: 15px; padding: 0 20px; color: #333333; font-weight: 400;">
                     Queremos que disfrutéis sin preocupaciones, por eso hemos organizado transporte en autobús desde la iglesia a la finca y de vuelta.
                     <br><br>
                     También podéis reservar alojamiento en el <br>
@@ -238,21 +257,21 @@
                 <div style="width:100%; max-width:360px; margin:0 auto; text-align:left;">
                     
                     <div style="display:flex; align-items:center; margin-bottom:15px;">
-                        <span style="font-size:0.95rem; font-weight:600; margin-right:10px; color:#555;">Nombre:</span>
-                        <input type="text" id="input-nombre" placeholder="Indica tu nombre completo..." style="flex:1; padding:12px; border: 1px solid #ccc; border-radius:10px; font-family:'Montserrat'; font-size:0.95rem;">
+                        <span style="font-size:1.7rem; font-weight:400; margin-right:10px; color:#333333;">Nombre:</span>
+                        <input type="text" id="input-nombre" placeholder="Indica tu nombre completo..." style="flex:1; padding:12px; border: 1px solid #ccc; border-radius:10px; font-family:'Great Vibes', cursive; font-size:1.5rem; color: #333333;">
                     </div>
 
                     <div style="display:flex; justify-content: space-around; margin-bottom: 15px;">
-                        <label style="font-size:0.9rem; font-weight:500;"><input type="checkbox" id="check-bus" style="accent-color:var(--color-oro); width: 22px; height: 22px; vertical-align: middle;"> Bus</label>
-                        <label style="font-size:0.9rem; font-weight:500;"><input type="checkbox" id="check-hotel" style="accent-color:var(--color-oro); width: 22px; height: 22px; vertical-align: middle;"> Hotel</label>
+                        <label style="font-size:1.6rem; color: #333333;"><input type="checkbox" id="check-bus" style="accent-color:var(--color-oro); width: 22px; height: 22px; vertical-align: middle;"> Bus</label>
+                        <label style="font-size:1.6rem; color: #333333;"><input type="checkbox" id="check-hotel" style="accent-color:var(--color-oro); width: 22px; height: 22px; vertical-align: middle;"> Hotel</label>
                     </div>
 
                     <div style="display:flex; justify-content:space-between; align-items:center; margin:15px 0; border-bottom: 1px solid #ddd; padding-bottom:10px;">
-                        <span style="font-size:0.95rem; font-weight: 600;">¿Cuántos sois en total?</span>
+                        <span style="font-size:1.6rem; color: #333333;">¿Cuántos sois en total?</span>
                         <input type="number" id="num-total" value="1" min="1" oninput="controlarPlatos()" class="input-number-grande">
                     </div>
 
-                    <p style="font-weight:600; color:var(--color-oro); font-size:0.85rem; margin-top: 15px; margin-bottom:10px; text-transform:uppercase; text-align:center; letter-spacing: 1px;">Selección de Menú</p>
+                    <p style="font-weight:400; color:var(--color-oro); font-size:1.8rem; margin-top: 15px; margin-bottom:10px; text-align:center;">Selección de Menú</p>
                     
                     <div class="plate-selector">
                         <span>Carrillera en salsa con gratinado de patatas</span>
@@ -267,35 +286,35 @@
                         <input type="number" id="count-infantil" value="0" min="0" oninput="controlarPlatos()" class="input-number-grande">
                     </div>
 
-                    <p id="aviso-platos" style="font-size: 0.85rem; color: #d9534f; text-align: center; margin: 10px 0; font-weight: 600;">Platos por asignar: <span id="platos-libres">1</span></p>
+                    <p id="aviso-platos" style="font-size: 1.4rem; color: #d9534f; text-align: center; margin: 10px 0;">Platos por asignar: <span id="platos-libres">1</span></p>
                     
-                    <input type="text" id="input-intolerancia" placeholder="Alergias o intolerancias..." style="width:100%; padding:14px; border: 1px solid #ccc; border-radius:10px; margin-top:10px; font-family:'Montserrat'; font-size:0.95rem;">
+                    <input type="text" id="input-intolerancia" placeholder="Alergias o intolerancias..." style="width:100%; padding:14px; border: 1px solid #ccc; border-radius:10px; margin-top:10px; font-family:'Great Vibes', cursive; font-size:1.5rem; color: #333333;">
                 </div>
 
                 <div class="btn-cam-rsvp" onclick="enviarWhatsApp()" style="margin-top: 25px;"></div>
-                <span style="font-size:0.8rem; color:#888; font-weight: 500;">(Toca el sobre para confirmar)</span>
+                <span style="font-size:1.4rem; color:#333333; opacity: 0.8;">(Toca el sobre para confirmar)</span>
                 
-                <span class="gold-label" style="font-size:1rem; margin-top:20px;">Hotel Montera Plaza</span>
-                <a href="https://www.google.com/maps/place/Hotel+Montera+Plaza/@36.1779717,-5.4909492,17z/data=!3m1!4b1!4m9!3m8!1s0xd0cec8885df7d19:0xfbad1bac735bdc52!5m2!4m1!1i2!8m2!3d36.1779674!4d-5.4883743!16s%2Fg%2F1tfnzvxb?entry=ttu&g_ep=EgoyMDI2MDQwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn-circle" style="width:60px; height:60px; margin: 5px auto;"></a>
+                <span class="gold-label" style="font-size:1.9rem; margin-top:20px;">Hotel Montera Plaza</span>
+                <a href="https://www.google.com/maps/place/Hotel+Montera+Plaza/@36.1779717,-5.4909492,17z/data=!3m1!4b1!4m9!3m8!1s0xd0cec8885df7d19:0xfbad1bac735bdc52!5m2!4m1!1i2!8m2!3d36.1779674!4d-5.4883743!16s%2Fg%2F1tfnzvxb?entry=ttu&g_ep=EgoyMDI2MDQwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn-circle" style="width:55px; height:55px; margin: 5px auto;"></a>
             </div>
             <img src="asistenciafoto.jpeg" class="main-img" style="height: 100%; min-height: 100vh;">
         </section>
 
         <section>
             <div class="content-overlay" style="justify-content: flex-end; height: 42%; padding-bottom:15px; align-items: center;">
-                <p style="font-family:'Playfair Display'; font-size:1.4rem; text-shadow: 0 0 10px white; color:#4a4a4a;">¡Ayúdanos a crear el álbum perfecto!</p>
-                <p style="font-family:'Playfair Display'; font-size:1.1rem; padding: 0 40px; text-shadow: 0 0 10px white; color:#4a4a4a; line-height:1.4;">Comparte con nosotros las fotos que realices en nuestro Gran Día.</p>
+                <p style="font-family:'Great Vibes'; font-size:2.2rem; text-shadow: 0 0 10px white; color:#333333;">¡Ayúdanos a crear el álbum perfecto!</p>
+                <p style="font-family:'Great Vibes'; font-size:1.8rem; padding: 0 40px; text-shadow: 0 0 10px white; color:#333333; line-height:1.2;">Comparte con nosotros las fotos que realices en nuestro Gran Día.</p>
                 <a href="https://photos.app.goo.gl/45Gay5WAcztvDSk56" target="_blank" style="width: 85px; height: 85px; border-radius: 50%; background: url('iconoimagenes.jpeg') center/cover; border: 2px solid white; margin-top:15px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);"></a>
-                <span style="font-size: 0.7rem; color: var(--color-oro); font-weight: 600; margin-top: 5px; text-transform: uppercase;">(Subir fotos)</span>
+                <span style="font-size: 1.3rem; color: var(--color-oro); text-transform: uppercase;"></span>
             </div>
             <img src="albumfoto.jpeg" class="main-img">
         </section>
 
         <section>
-            <div class="content-overlay text-bottom">
-                 <p style="font-family:'Playfair Display', serif; font-size:2.2rem; font-style: italic; color: #FFFFFF; text-shadow: 2px 2px 4px rgba(68,68,68,0.8); padding: 0 20px; line-height: 1.1; margin-bottom: 20px;">
+            <div class="content-overlay text-top">
+                 <p style="font-family:'Great Vibes', cursive; font-size:3.2rem; color: #333333; padding: 0 20px; line-height: 1.1; margin-bottom: 20px;">
                     No será lo mismo sin vosotros<br>
-                    <span style="font-size: 2.5rem; font-weight: 600; font-style: italic; color: #FFFFFF; text-shadow: 2px 2px 4px rgba(68,68,68,0.8);">¡Os esperamos!</span>
+                    <span style="font-size: 3.5rem; font-weight: 400; color: #333333;">¡Os esperamos!</span>
                  </p>
             </div>
             <img src="finalfoto.jpeg" class="main-img">
