@@ -345,7 +345,6 @@
             datosParaExcel.append('bus', bus);
             datosParaExcel.append('hotel', hotel);
             datosParaExcel.append('total', total);
-            datosParaExcel.append('notas', intolerancia);
             datosParaExcel.append('cancion', canciones);
 
             fetch(scriptURL, { method: 'POST', body: datosParaExcel, mode: 'no-cors' });
