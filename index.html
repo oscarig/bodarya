@@ -87,8 +87,8 @@
         #music-status { color: white; font-size: 2.2rem; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
 
         .song-input {
-            width: 100%; max-width: 340px; height: 100px; padding: 12px; border: 1px solid #eee; border-radius: 15px;
-            background: rgba(255, 255, 255, 0.7); font-family: 'Great Vibes', cursive; font-size: 1.5rem; resize: none; margin-top: 15px; outline: none; color: #333333;
+            width: 100%; max-width: 340px; height: 80px; padding: 12px; border: 1px solid #eee; border-radius: 15px;
+            background: rgba(255, 255, 255, 0.7); font-family: 'Montserrat', sans-serif; font-size: 0.85rem; resize: none; margin-top: 15px; outline: none; color: #333;
         }
 
         .plate-selector {
@@ -109,15 +109,15 @@
         /* Estilos específicos para texto de portada (Cursiva Elegante) */
         .portada-info {
             font-family: 'Great Vibes', cursive;
-            text-transform: none; /* Quitamos mayúsculas automáticas para cursiva */
+            text-transform: none;
         }
         .portada-info span {
-            font-size: 4rem; /* Ajuste de tamaño para nombres en cursiva */
+            font-size: 4rem;
             display: block;
         }
         .portada-info p.hero-black-text {
-            font-size: 2.2rem; /* Ajuste para fecha y "Nos Casamos" */
-            color: #333333 !important; /* Mantenemos el grafito oscuro */
+            font-size: 2.2rem;
+            color: #333333 !important;
             margin-top: 5px;
         }
     </style>
@@ -241,14 +241,11 @@
             <img src="cancionesfoto2.jpeg" class="main-img">
         </section>
 
-      
-
         <section>
             <div class="content-overlay" style="justify-content: flex-end; height: 42%; padding-bottom:15px; align-items: center;">
                 <p style="font-family:'Great Vibes'; font-size:2.2rem; text-shadow: 0 0 10px white; color:#333333;">¡Ayúdanos a crear el álbum perfecto!</p>
                 <p style="font-family:'Great Vibes'; font-size:1.8rem; padding: 0 40px; text-shadow: 0 0 10px white; color:#333333; line-height:1.2;">Comparte con nosotros las fotos que realices en nuestro Gran Día.</p>
                 <a href="https://photos.app.goo.gl/45Gay5WAcztvDSk56" target="_blank" style="width: 85px; height: 85px; border-radius: 50%; background: url('iconoimagenes.jpeg') center/cover; border: 2px solid white; margin-top:15px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);"></a>
-                <span style="font-size: 1.3rem; color: var(--color-oro); text-transform: uppercase;"></span>
             </div>
             <img src="albumfoto.jpeg" class="main-img">
         </section>
@@ -262,8 +259,8 @@
             </div>
             <img src="finalfoto.jpeg" class="main-img">
         </section>
-		
-		  <section class="section-auto">
+        
+        <section class="section-auto">
             <div class="content-overlay text-center" style="padding-top: 30px;">
                 <h2 style="margin-bottom: 5px;">Asistencia</h2>
                 
@@ -273,19 +270,18 @@
                     También podéis reservar alojamiento en el <br>
                     <span class="gold-label" style="font-size:1.9rem; margin-top:20px;">Hotel Montera Plaza</span> 
                  <br>
-				 </p>
-				 <a href="https://www.google.com/maps/place/Hotel+Montera+Plaza/@36.1779717,-5.4909492,17z/data=!3m1!4b1!4m9!3m8!1s0xd0cec8885df7d19:0xfbad1bac735bdc52!5m2!4m1!1i2!8m2!3d36.1779674!4d-5.4883743!16s%2Fg%2F1tfnzvxb?entry=ttu&g_ep=EgoyMDI2MDQwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn-circle" style="width:55px; height:55px; "></a>
-				<p> 
+                 </p>
+                 <a href="https://www.google.com/maps/place/Hotel+Montera+Plaza/@36.1779717,-5.4909492,17z/data=!3m1!4b1!4m9!3m8!1s0xd0cec8885df7d19:0xfbad1bac735bdc52!5m2!4m1!1i2!8m2!3d36.1779674!4d-5.4883743!16s%2Fg%2F1tfnzvxb?entry=ttu&g_ep=EgoyMDI2MDQwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn-circle" style="width:55px; height:55px; "></a>
+                <p> 
                     (Distancia de la finca 10 minutos, <br>
                     75€/ habitación doble con desayuno y salida tardía).
                 </p>
-				
-</br>
+
                 <div style="width:100%; max-width:360px; margin:0 auto; text-align:left;">
                     
-                    <div style="display:flex; align-items:center; margin-bottom:15px;">
+                    <div style="display:flex; align-items:center; margin-bottom:15px; justify-content: center;">
                         <span style="font-size:1.7rem; font-weight:400; margin-right:10px; color:#333333;">Nombre:</span>
-                        <input type="text" id="input-nombre" placeholder="Indica tu nombre completo..." style="width:200px; padding:10px; border: 1px solid #ccc; border-radius:10px; font-family:'Great Vibes', cursive; font-size:1.3rem; color: var(--texto-grafito);">
+                        <input type="text" id="input-nombre" placeholder="Indica tu nombre completo..." style="width:200px; padding:10px; border: 1px solid #ccc; border-radius:10px; font-family:'Great Vibes', cursive; font-size:1.3rem; color: var(--texto-secciones);">
                     </div>
 
                     <div style="display:flex; justify-content: space-around; margin-bottom: 15px;">
@@ -295,29 +291,10 @@
 
                     <div style="display:flex; justify-content:space-between; align-items:center; margin:15px 0; border-bottom: 1px solid #ddd; padding-bottom:10px;">
                         <span style="font-size:1.6rem; color: #333333;">¿Cuántos sois en total?</span>
-                        <input type="number" id="num-total" value="1" min="1" oninput="controlarPlatos()" class="input-number-grande">
-                    </div>
-  <!--
-                    <p style="font-weight:400; color:var(--color-oro); font-size:1.8rem; margin-top: 15px; margin-bottom:10px; text-align:center;">Selección de Menú</p>
-                  
-                    <div class="plate-selector">
-                        <span>Carrillera en salsa con gratinado de patatas</span>
-                        <input type="number" id="count-carrilleras" value="0" min="0" oninput="controlarPlatos()" class="input-number-grande">
-                    </div>
-                    <div class="plate-selector">
-                        <span>Lomo de merluza en salsa verde con gratinado de patata</span>
-                        <input type="number" id="count-merluza" value="0" min="0" oninput="controlarPlatos()" class="input-number-grande">
-                    </div>
-                    <div class="plate-selector">
-                        <span>Menú infantil (preguntar)</span>
-                        <input type="number" id="count-infantil" value="0" min="0" oninput="controlarPlatos()" class="input-number-grande">
+                        <input type="number" id="num-total" value="1" min="1" class="input-number-grande">
                     </div>
 
-                    <p id="aviso-platos" style="font-size: 1.4rem; color: #d9534f; text-align: center; margin: 10px 0;">Platos por asignar: <span id="platos-libres">1</span></p>
-                    
-                   
-				   <input type="text" id="input-intolerancia" placeholder="Alergias o intolerancias..." style="width:100%; padding:14px; border: 1px solid #ccc; border-radius:10px; margin-top:10px; font-family:'Great Vibes', cursive; font-size:1.5rem; color: #333333;">
-				   -->
+                    <input type="text" id="input-intolerancia" placeholder="Alergias o intolerancias..." style="width:100%; padding:14px; border: 1px solid #ccc; border-radius:10px; margin-top:10px; font-family:'Great Vibes', cursive; font-size:1.5rem; color: #333333;">
                 </div>
 
                 <div class="btn-cam-rsvp" onclick="enviarWhatsApp()" style="margin-top: 25px;"></div>
@@ -352,46 +329,14 @@
             if (audio.paused) { audio.play(); document.getElementById("music-status").innerText = "⏸"; } 
             else { audio.pause(); document.getElementById("music-status").innerText = "▶"; }
         }
-
-        function controlarPlatos() {
-            const total = parseInt(document.getElementById('num-total').value) || 0;
-            const c = document.getElementById('count-carrilleras');
-            const m = document.getElementById('count-merluza');
-            const i = document.getElementById('count-infantil');
-            const libres = document.getElementById('platos-libres');
-            
-            let vc = parseInt(c.value) || 0;
-            let vm = parseInt(m.value) || 0;
-            let vi = parseInt(i.value) || 0;
-
-            if (vc + vm + vi > total) {
-                const target = event.target;
-                if (target.id === 'count-carrilleras') c.value = Math.max(0, total - vm - vi);
-                else if (target.id === 'count-merluza') m.value = Math.max(0, total - vc - vi);
-                else i.value = Math.max(0, total - vc - vm);
-            }
-            
-            vc = parseInt(c.value) || 0;
-            vm = parseInt(m.value) || 0;
-            vi = parseInt(i.value) || 0;
-            libres.innerText = Math.max(0, total - (vc + vm + vi));
-        }
         
         function enviarWhatsApp() {
             const nombre = document.getElementById('input-nombre').value || "No indicado";
             const total = document.getElementById('num-total').value;
             const bus = document.getElementById('check-bus').checked ? "SÍ" : "NO";
             const hotel = document.getElementById('check-hotel').checked ? "SÍ" : "NO";
-            const c = document.getElementById('count-carrilleras').value || 0;
-            const m = document.getElementById('count-merluza').value || 0;
-            const inf = document.getElementById('count-infantil').value || 0;
-            const notas = document.getElementById('input-intolerancia').value || "Ninguna";
+            const intolerancia = document.getElementById('input-intolerancia').value || "Ninguna";
             const canciones = document.getElementById('input-canciones').value || "No indicado";
-            
-            if ((parseInt(c) + parseInt(m) + parseInt(inf)) != parseInt(total)) {
-                alert("Por favor, asigna los platos para todos los asistentes.");
-                return;
-            }
 
             const scriptURL = 'https://script.google.com/macros/s/AKfycbx-V1WHzhTINgrFa7nFaJYtC6mpGtd34CsL4_SHYTQFfzxdeg99j6xWikgUv_52deHZ/exec';
             const datosParaExcel = new URLSearchParams();
@@ -399,15 +344,12 @@
             datosParaExcel.append('bus', bus);
             datosParaExcel.append('hotel', hotel);
             datosParaExcel.append('total', total);
-            datosParaExcel.append('carrilleras', c);
-            datosParaExcel.append('merluza', m);
-            datosParaExcel.append('infantil', inf);
-            datosParaExcel.append('notas', notas);
+            datosParaExcel.append('notas', intolerancia);
             datosParaExcel.append('cancion', canciones);
 
             fetch(scriptURL, { method: 'POST', body: datosParaExcel, mode: 'no-cors' });
 
-            let msj = `¡Hola Rafa y Ana! Confirmo asistencia.%0A%0A- Nombre: ${nombre}%0A- Personas: ${total}%0A- Bus: ${bus}%0A- Hotel: ${hotel}%0A- Menú:%0A  · ${c} Carrilleras%0A  · ${m} Merluzas%0A  · ${inf} Infantiles%0A- Notas: ${notas}%0A- Playlist: ${canciones}`;
+            let msj = `¡Hola Rafa y Ana! Confirmo asistencia.%0A%0A- Nombre: ${nombre}%0A- Personas: ${total}%0A- Bus: ${bus}%0A- Hotel: ${hotel}%0A- Notas/Alergias: ${intolerancia}%0A- Playlist: ${canciones}`;
             
             alert("¡Gracias! Estamos guardando tu confirmación...");
             window.open(`https://wa.me/34678891185?text=${msj}`, '_blank');
