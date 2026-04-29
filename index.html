@@ -251,6 +251,18 @@
         </section>
 
         <section>
+            <div class="content-overlay text-center">
+                <h2>Regalo</h2>
+                <p style="padding: 0 35px; margin-bottom: 20px;">
+                    Lo mas importante es vuestra presencia pero si quereis hacernos un regalo, podeis hacerlo a traves de nuestra cuenta
+                </p>
+                <div class="btn-circle" onclick="bromaRegalo()" style="margin: 0 auto; background-color: rgba(255,255,255,0.7);"></div>
+                <p style="font-size: 1.1rem; margin-top: 10px;">(Ver cuenta)</p>
+            </div>
+            <img src="asistenciafoto.jpeg" class="main-img">
+        </section>
+
+        <section>
             <div class="content-overlay text-top">
                  <p style="font-family:'Great Vibes', cursive; font-size:3.2rem; color: #333333; padding: 0 20px; line-height: 1.1; margin-bottom: 20px;">
                     No será lo mismo sin vosotros<br>
@@ -281,7 +293,7 @@
                     
                     <div style="display:flex; align-items:center; margin-bottom:15px; justify-content: center;">
                         <span style="font-size:1.7rem; font-weight:400; margin-right:10px; color:#333333;">Nombre:</span>
-                        <input type="text" id="input-nombre" placeholder="Indica tu nombre completo..." style="width:200px; padding:10px; border: 1px solid #ccc; border-radius:10px; font-family:'Great Vibes', cursive; font-size:1.3rem; color: var(--texto-secciones);">
+                        <input type="text" id="input-nombre" placeholder="Indica tu nombre completo..." style="width:200px; padding:10px; border: 1px solid #ccc; border-radius:10px; font-family:'Great Vibes', cursive; font-size:1.3rem; color: #333333;">
                     </div>
 
                     <div style="display:flex; justify-content: space-around; margin-bottom: 15px;">
@@ -293,9 +305,8 @@
                         <span style="font-size:1.6rem; color: #333333;">¿Cuántos sois en total?</span>
                         <input type="number" id="num-total" value="1" min="1" class="input-number-grande">
                     </div>
-<!--
+
                     <input type="text" id="input-intolerancia" placeholder="Alergias o intolerancias..." style="width:100%; padding:14px; border: 1px solid #ccc; border-radius:10px; margin-top:10px; font-family:'Great Vibes', cursive; font-size:1.5rem; color: #333333;">
-               -->
                 </div>
 
                 <div class="btn-cam-rsvp" onclick="enviarWhatsApp()" style="margin-top: 25px;"></div>
@@ -331,6 +342,10 @@
             else { audio.pause(); document.getElementById("music-status").innerText = "▶"; }
         }
         
+        function bromaRegalo() {
+            alert("¡Picaste! Los regalos en metálico por favor");
+        }
+
         function enviarWhatsApp() {
             const nombre = document.getElementById('input-nombre').value || "No indicado";
             const total = document.getElementById('num-total').value;
