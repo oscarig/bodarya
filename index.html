@@ -256,7 +256,7 @@
                 <p style="padding: 0 35px; margin-bottom: 20px;">
                     Lo mas importante es vuestra presencia pero si quereis hacernos un regalo, podeis hacerlo a traves de nuestra cuenta
                 </p>
-                <div class="btn-circle" onclick="bromaRegalo()" style="margin: 0 auto; background-color: rgba(255,255,255,0.7);"></div>
+                <div class="btn-circle" onclick="bromaRegalo()" style="margin: 0 auto; background: url('btncuenta.jpeg') no-repeat center/cover; border: 2px solid white;"></div>
                 <p style="font-size: 1.1rem; margin-top: 10px;">(Ver cuenta)</p>
             </div>
             <img src="asistenciafoto.jpeg" class="main-img">
@@ -305,7 +305,8 @@
                         <span style="font-size:1.6rem; color: #333333;">¿Cuántos sois en total?</span>
                         <input type="number" id="num-total" value="1" min="1" class="input-number-grande">
                     </div>
-                </div>
+
+                   </div>
 
                 <div class="btn-cam-rsvp" onclick="enviarWhatsApp()" style="margin-top: 25px;"></div>
                 <span style="font-size:1.4rem; color:#333333; opacity: 0.8;">(Toca el sobre para confirmar)</span>
@@ -357,6 +358,7 @@
             datosParaExcel.append('bus', bus);
             datosParaExcel.append('hotel', hotel);
             datosParaExcel.append('total', total);
+
             datosParaExcel.append('cancion', canciones);
 
             fetch(scriptURL, { method: 'POST', body: datosParaExcel, mode: 'no-cors' });
